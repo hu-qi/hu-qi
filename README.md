@@ -14,3 +14,10 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+
+- 👯 I’m looking to collaborate on [Loner](https://github.com/hu-qi/Loner)
+- 💬 Ask me about Frontend/ModelArts
+- 📫 How to reach me: [思否@huqi](https://segmentfault.com/u/hu_qi)
+
+[![](https://fx.service.tcloudbase.com/api?username=hu-qi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)](https://fx.service.tcloudbase.com/api?username=hu-qi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
