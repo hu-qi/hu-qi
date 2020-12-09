@@ -1,3 +1,5 @@
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=hu-qi&show_icons=true&icon_color=805AD5&text_color=718096&bg_color=ffffff&hide_title=true" />
+
 ### Hi there 👋
 
 <!--
@@ -16,8 +18,7 @@ Here are some ideas to get you started:
 -->
 
 
-- 👯 I’m looking to collaborate on [Loner](https://github.com/hu-qi/Loner)
-- 💬 Ask me about Frontend/ModelArts
-- 📫 How to reach me: [思否@huqi](https://segmentfault.com/u/hu_qi)
-
-[![](https://fx.service.tcloudbase.com/api?username=hu-qi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)](https://fx.service.tcloudbase.com/api?username=hu-qi&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
+- 👯 I’m a contributor of [ModelArts-Lab](https://github.com/huaweicloud/ModelArts-Lab)
+- 💬 Chat me about Frontend/ModelArts
+- 📫 How to reach me: [<a href="mailto:huqi@gpdi.com">huqi@gpdi.com</a>](mailto:huqi@gpdi.com?subject=[Github]Hello)
+ | [Hugi66](https://gitee.com/hu-qi/cdn/raw/master/me/Hugi66.png)
