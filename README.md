@@ -10,7 +10,7 @@ You can click the Preview link to take a look at your changes.
   <br>
   
   - 👋 Hi, I’m @hu-qi
-  - 👀 I’m interested in Front-End, AIoT
+  - 👀 I’m looking for a job
   - 🌱 I’m currently learning HarmonyOS and Ascend
   - 💞️ I’m looking to collaborate on Front-End, AIoT
   - 📫 How to reach me: huqi1024@gmail.com
