@@ -30,11 +30,11 @@ You can click the Preview link to take a look at your changes.
 <a href="https://paddlepaddle-badge.vercel.app/contributor/hu-qi/">
   <img src="https://paddlepaddle-badge.vercel.app/v1/contributor/hu-qi.svg" alt="@hu-qi Astro contributions" width="320" height="195">
 </a>
-<a href="https://github.com/liruifengv#gh-dark-mode-only">
-  <img src="https://github-readme-stats-one-mu-82.vercel.app/api?username=hu-qi&show_icons=true&theme=vue-dark&border_color=42b973#gh-dark-mode-only" />
+<a href="https://github.com/hu-qi#gh-dark-mode-only">
+  <img src="https://github-readme-stats.vercel.app/api?username=hu-qi&show_icons=true&theme=dark&border_color=42b973&bg_color=1a1b1e#gh-dark-mode-only" />
 </a>
-<a href="https://github.com/liruifengv#gh-light-mode-only">
-  <img src="https://github-readme-stats-one-mu-82.vercel.app/api?username=hu-qi&show_icons=true&icon_color=805AD5&text_color=718096&bg_color=ffffff#gh-light-mode-only" />
+<a href="https://github.com/hu-qi#gh-light-mode-only">
+  <img src="https://github-readme-stats.vercel.app/api?username=hu-qi&show_icons=true&icon_color=805AD5&text_color=718096&bg_color=ffffff#gh-light-mode-only" />
 </a>
 
 <br>
