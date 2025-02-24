@@ -10,7 +10,8 @@ You can click the Preview link to take a look at your changes.
   
   - 👋 Hi, I’m @hu-qi
   - 👀 I’m looking for a job
-  - 🌱 I’m currently learning HarmonyOS、Ascend and Astro
+  - 📝 I'm working [wow-agent](https://github.com/datawhalechina/wow-agent)、[wow-rag](https://github.com/datawhalechina/wow-rag)、[wow-fullstack](https://github.com/datawhalechina/wow-fullstack)
+  - 🌱 I’m currently learning LLM、ROS2 and CloudDev
   - 💞️ I’m looking to collaborate on Front-End, AIoT
   - 📫 How to reach me: huqi1024@gmail.com
 </a>
