@@ -22,7 +22,7 @@ You can click the Preview link to take a look at your changes.
 
 | Platform                                       | Wechat                                              |
 | ---------------------------------------------- | ------------------------------------------------- |
-| <ul> <li> [Blog(WIP)](https://hu-qi.github.io)</li> <li> [Twitter / X](https://twitter.com/huqii)</li> <li> [知乎](https://www.zhihu.com/people/fashaoge) </li><li> [华为云](https://bbs.huaweicloud.com/community/usersnew/id_1567662212449451) </li>  </ul>    |  <img src="./wechat-white.png" width="250" alt="My WeChat qrCode" >    |
+| <ul> <li> [Blog(WIP)](https://hu-qi.github.io)</li> <li> [Twitter / X](https://twitter.com/huqii)</li> <li> [知乎](https://www.zhihu.com/people/fashaoge) </li><li> [华为云](https://bbs.huaweicloud.com/community/usersnew/id_1567662212449451) </li>  </ul>    |  <img src="https://fastly.jsdelivr.net/gh/hu-qi/hu-qi/wechat-white.png" width="250" alt="My WeChat qrCode" >    |
 
 <br>
 
