@@ -1,0 +1,150 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">hu-qi GitHub Developer Relationship Graph</title>
+<desc id="desc">Generated from GitHub profile, repositories, authored issues and pull requests, and public events.</desc>
+<style>
+  .bg { fill: #0d1117; }
+  .card { fill: rgba(255,255,255,.045); stroke: rgba(255,255,255,.12); }
+  .title { fill: #f0f6fc; font: 700 34px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .sub { fill: #8b949e; font: 500 15px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .section { fill: #c9d1d9; font: 700 17px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .label { fill: #dbe7ff; font: 600 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .small { fill: #8b949e; font: 500 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .edge { stroke: rgba(88,166,255,.24); stroke-width: 1.4; fill: none; }
+  .node { stroke: rgba(255,255,255,.82); stroke-width: 1.2; filter: drop-shadow(0 0 12px rgba(88,166,255,.26)); }
+  .pill { fill: rgba(255,255,255,.055); stroke: rgba(255,255,255,.14); }
+  .core { fill: url(#core); stroke: rgba(255,255,255,.85); stroke-width: 2; filter: drop-shadow(0 0 24px rgba(126,231,135,.35)); }
+  @media (prefers-color-scheme: light) {
+    .bg { fill: #ffffff; }
+    .card { fill: #f6f8fa; stroke: #d0d7de; }
+    .title { fill: #24292f; }
+    .sub, .small { fill: #57606a; }
+    .section { fill: #24292f; }
+    .label { fill: #24292f; }
+    .edge { stroke: rgba(9,105,218,.22); }
+    .pill { fill: #ffffff; stroke: #d0d7de; }
+  }
+</style>
+<defs>
+  <linearGradient id="core" x1="520" y1="280" x2="680" y2="440" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#7ee787"/>
+    <stop offset="1" stop-color="#58a6ff"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="760" rx="28" class="bg"/>
+<rect x="32" y="32" width="1136" height="696" rx="26" class="card"/>
+<text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · hu-qi</text>
+<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 08:40:09 UTC</text>
+
+<text x="600" y="150" text-anchor="middle" class="section">Recent Activity</text>
+<path d="M 600 360 C 600 260, 340 260, 340 178" class="edge"/>
+<circle cx="340" cy="178" r="23.0" fill="#ffa657" class="node"/>
+<text x="340" y="146.0" text-anchor="middle" class="label">Push</text>
+<path d="M 600 360 C 600 260, 470 260, 470 178" class="edge"/>
+<circle cx="470" cy="178" r="14.8" fill="#ffa657" class="node"/>
+<text x="470" y="154.2" text-anchor="middle" class="label">Watch</text>
+<path d="M 600 360 C 600 260, 600 260, 600 178" class="edge"/>
+<circle cx="600" cy="178" r="13.9" fill="#ffa657" class="node"/>
+<text x="600" y="155.1" text-anchor="middle" class="label">Create</text>
+<path d="M 600 360 C 600 260, 730 260, 730 178" class="edge"/>
+<circle cx="730" cy="178" r="13.6" fill="#ffa657" class="node"/>
+<text x="730" y="155.4" text-anchor="middle" class="label">PullRequest</text>
+<path d="M 600 360 C 600 260, 860 260, 860 178" class="edge"/>
+<circle cx="860" cy="178" r="11.6" fill="#ffa657" class="node"/>
+<text x="860" y="157.4" text-anchor="middle" class="label">Fork</text>
+<text x="80" y="192" text-anchor="start" class="section">Repositories</text>
+<path d="M 600 360 C 405 360, 405 227, 90 227" class="edge"/>
+
+<rect x="80" y="210" width="116" height="34" rx="17" class="pill"/>
+<circle cx="179" cy="227" r="21.0" fill="#58a6ff" class="node"/>
+<text x="96" y="232" text-anchor="start" class="label">hu-qi/x-cli-rs</text>
+<path d="M 600 360 C 405 360, 405 275, 90 275" class="edge"/>
+
+<rect x="80" y="258" width="207" height="34" rx="17" class="pill"/>
+<circle cx="270" cy="275" r="21.0" fill="#58a6ff" class="node"/>
+<text x="96" y="280" text-anchor="start" class="label">oh-awesome/flutter_packages</text>
+<path d="M 600 360 C 405 360, 405 323, 90 323" class="edge"/>
+
+<rect x="80" y="306" width="240" height="34" rx="17" class="pill"/>
+<circle cx="303" cy="323" r="21.0" fill="#58a6ff" class="node"/>
+<text x="96" y="328" text-anchor="start" class="label">Open-Source-Bazaar/feishu-action</text>
+<path d="M 600 360 C 405 360, 405 371, 90 371" class="edge"/>
+
+<rect x="80" y="354" width="240" height="34" rx="17" class="pill"/>
+<circle cx="303" cy="371" r="20.5" fill="#58a6ff" class="node"/>
+<text x="96" y="376" text-anchor="start" class="label">hu-qi/deep-domain-learning-skill</text>
+<path d="M 600 360 C 405 360, 405 419, 90 419" class="edge"/>
+
+<rect x="80" y="402" width="214" height="34" rx="17" class="pill"/>
+<circle cx="277" cy="419" r="19.1" fill="#58a6ff" class="node"/>
+<text x="96" y="424" text-anchor="start" class="label">datawhalechina/wow-fullstack</text>
+<path d="M 600 360 C 405 360, 405 467, 90 467" class="edge"/>
+
+<rect x="80" y="450" width="112" height="34" rx="17" class="pill"/>
+<circle cx="175" cy="467" r="18.5" fill="#58a6ff" class="node"/>
+<text x="96" y="472" text-anchor="start" class="label">hu-qi/hu-qi</text>
+<path d="M 600 360 C 405 360, 405 515, 90 515" class="edge"/>
+
+<rect x="80" y="498" width="186" height="34" rx="17" class="pill"/>
+<circle cx="249" cy="515" r="18.1" fill="#58a6ff" class="node"/>
+<text x="96" y="520" text-anchor="start" class="label">vllm-project/vllm-ascend</text>
+<text x="1120" y="217" text-anchor="end" class="section">Communities / Orgs</text>
+<path d="M 600 360 C 795 360, 795 252, 1110 252" class="edge"/>
+
+<rect x="1008" y="235" width="112" height="34" rx="17" class="pill"/>
+<circle cx="1025" cy="252" r="20.6" fill="#d2a8ff" class="node"/>
+<text x="1104" y="257" text-anchor="end" class="label">oh-awesome</text>
+<path d="M 600 360 C 795 360, 795 300, 1110 300" class="edge"/>
+
+<rect x="976" y="283" width="144" height="34" rx="17" class="pill"/>
+<circle cx="993" cy="300" r="19.9" fill="#d2a8ff" class="node"/>
+<text x="1104" y="305" text-anchor="end" class="label">Open-Source-Bazaar</text>
+<path d="M 600 360 C 795 360, 795 348, 1110 348" class="edge"/>
+
+<rect x="1008" y="331" width="112" height="34" rx="17" class="pill"/>
+<circle cx="1025" cy="348" r="18.4" fill="#d2a8ff" class="node"/>
+<text x="1104" y="353" text-anchor="end" class="label">luojiyin1987</text>
+<path d="M 600 360 C 795 360, 795 396, 1110 396" class="edge"/>
+
+<rect x="1004" y="379" width="116" height="34" rx="17" class="pill"/>
+<circle cx="1021" cy="396" r="18.1" fill="#d2a8ff" class="node"/>
+<text x="1104" y="401" text-anchor="end" class="label">datawhalechina</text>
+<path d="M 600 360 C 795 360, 795 444, 1110 444" class="edge"/>
+
+<rect x="1008" y="427" width="112" height="34" rx="17" class="pill"/>
+<circle cx="1025" cy="444" r="17.1" fill="#d2a8ff" class="node"/>
+<text x="1104" y="449" text-anchor="end" class="label">dethan3</text>
+<path d="M 600 360 C 795 360, 795 492, 1110 492" class="edge"/>
+
+<rect x="1008" y="475" width="112" height="34" rx="17" class="pill"/>
+<circle cx="1025" cy="492" r="16.0" fill="#d2a8ff" class="node"/>
+<text x="1104" y="497" text-anchor="end" class="label">vllm-project</text>
+<text x="600" y="580" text-anchor="middle" class="section">Languages</text>
+<path d="M 600 360 C 600 455, 246 455, 246 610" class="edge"/>
+<circle cx="246" cy="610" r="17.2" fill="#7ee787" class="node"/>
+<text x="246" y="644.2" text-anchor="middle" class="label">Python</text>
+<path d="M 600 360 C 600 455, 364 455, 364 610" class="edge"/>
+<circle cx="364" cy="610" r="16.4" fill="#7ee787" class="node"/>
+<text x="364" y="643.4" text-anchor="middle" class="label">TypeScript</text>
+<path d="M 600 360 C 600 455, 482 455, 482 610" class="edge"/>
+<circle cx="482" cy="610" r="16.0" fill="#7ee787" class="node"/>
+<text x="482" y="643.0" text-anchor="middle" class="label">JavaScript</text>
+<path d="M 600 360 C 600 455, 600 455, 600 610" class="edge"/>
+<circle cx="600" cy="610" r="13.2" fill="#7ee787" class="node"/>
+<text x="600" y="640.2" text-anchor="middle" class="label">Rust</text>
+<path d="M 600 360 C 600 455, 718 455, 718 610" class="edge"/>
+<circle cx="718" cy="610" r="12.8" fill="#7ee787" class="node"/>
+<text x="718" y="639.8" text-anchor="middle" class="label">Jupyter Noteb…</text>
+<path d="M 600 360 C 600 455, 836 455, 836 610" class="edge"/>
+<circle cx="836" cy="610" r="12.8" fill="#7ee787" class="node"/>
+<text x="836" y="639.8" text-anchor="middle" class="label">HTML</text>
+<path d="M 600 360 C 600 455, 954 455, 954 610" class="edge"/>
+<circle cx="954" cy="610" r="12.3" fill="#7ee787" class="node"/>
+<text x="954" y="639.3" text-anchor="middle" class="label">C</text>
+
+<circle cx="600" cy="360" r="86" class="core"/>
+<text x="600" y="345" text-anchor="middle" style="fill:#0d1117;font:800 28px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">huqi</text>
+<text x="600" y="374" text-anchor="middle" style="fill:#0d1117;font:700 14px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">@hu-qi</text>
+<text x="600" y="401" text-anchor="middle" style="fill:#0d1117;font:700 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">122 repos · 124 followers</text>
+
+<text x="600" y="704" text-anchor="middle" class="small">Generated by .github/scripts/generate-developer-graph.py · update via GitHub Actions</text>
+</svg>
