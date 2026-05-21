@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21 08:40:09 UTC",
+  "generated_at": "2026-05-21 09:09:13 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
@@ -10,7 +10,7 @@
   "repos": [
     [
       "hu-qi/x-cli-rs",
-      126
+      120
     ],
     [
       "oh-awesome/flutter_packages",
@@ -21,16 +21,16 @@
       80
     ],
     [
+      "hu-qi/hu-qi",
+      70
+    ],
+    [
       "hu-qi/deep-domain-learning-skill",
       61
     ],
     [
       "datawhalechina/wow-fullstack",
       48
-    ],
-    [
-      "hu-qi/hu-qi",
-      43
     ],
     [
       "vllm-project/vllm-ascend",
@@ -96,7 +96,7 @@
   "events": [
     [
       "Push",
-      78
+      83
     ],
     [
       "Watch",
@@ -104,11 +104,11 @@
     ],
     [
       "Create",
-      6
+      5
     ],
     [
       "PullRequest",
-      5
+      2
     ],
     [
       "Fork",

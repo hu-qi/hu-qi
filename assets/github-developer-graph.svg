@@ -33,24 +33,24 @@
 <rect width="1200" height="760" rx="28" class="bg"/>
 <rect x="32" y="32" width="1136" height="696" rx="26" class="card"/>
 <text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · hu-qi</text>
-<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 08:40:09 UTC</text>
+<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 09:09:13 UTC</text>
 
-<text x="600" y="150" text-anchor="middle" class="section">Recent Activity</text>
-<path d="M 600 360 C 600 260, 340 260, 340 178" class="edge"/>
-<circle cx="340" cy="178" r="23.0" fill="#ffa657" class="node"/>
-<text x="340" y="146.0" text-anchor="middle" class="label">Push</text>
-<path d="M 600 360 C 600 260, 470 260, 470 178" class="edge"/>
-<circle cx="470" cy="178" r="14.8" fill="#ffa657" class="node"/>
-<text x="470" y="154.2" text-anchor="middle" class="label">Watch</text>
-<path d="M 600 360 C 600 260, 600 260, 600 178" class="edge"/>
-<circle cx="600" cy="178" r="13.9" fill="#ffa657" class="node"/>
-<text x="600" y="155.1" text-anchor="middle" class="label">Create</text>
-<path d="M 600 360 C 600 260, 730 260, 730 178" class="edge"/>
-<circle cx="730" cy="178" r="13.6" fill="#ffa657" class="node"/>
-<text x="730" y="155.4" text-anchor="middle" class="label">PullRequest</text>
-<path d="M 600 360 C 600 260, 860 260, 860 178" class="edge"/>
-<circle cx="860" cy="178" r="11.6" fill="#ffa657" class="node"/>
-<text x="860" y="157.4" text-anchor="middle" class="label">Fork</text>
+<text x="600" y="128" text-anchor="middle" class="section">Recent Activity</text>
+<path d="M 600 360 C 600 260, 340 260, 340 190" class="edge"/>
+<circle cx="340" cy="190" r="23.0" fill="#ffa657" class="node"/>
+<text x="340" y="157.0" text-anchor="middle" class="label">Push</text>
+<path d="M 600 360 C 600 260, 470 260, 470 190" class="edge"/>
+<circle cx="470" cy="190" r="14.8" fill="#ffa657" class="node"/>
+<text x="470" y="165.2" text-anchor="middle" class="label">Watch</text>
+<path d="M 600 360 C 600 260, 600 260, 600 190" class="edge"/>
+<circle cx="600" cy="190" r="13.6" fill="#ffa657" class="node"/>
+<text x="600" y="166.4" text-anchor="middle" class="label">Create</text>
+<path d="M 600 360 C 600 260, 730 260, 730 190" class="edge"/>
+<circle cx="730" cy="190" r="12.3" fill="#ffa657" class="node"/>
+<text x="730" y="167.7" text-anchor="middle" class="label">PullRequest</text>
+<path d="M 600 360 C 600 260, 860 260, 860 190" class="edge"/>
+<circle cx="860" cy="190" r="11.6" fill="#ffa657" class="node"/>
+<text x="860" y="168.4" text-anchor="middle" class="label">Fork</text>
 <text x="80" y="192" text-anchor="start" class="section">Repositories</text>
 <path d="M 600 360 C 405 360, 405 227, 90 227" class="edge"/>
 
@@ -69,19 +69,19 @@
 <text x="96" y="328" text-anchor="start" class="label">Open-Source-Bazaar/feishu-action</text>
 <path d="M 600 360 C 405 360, 405 371, 90 371" class="edge"/>
 
-<rect x="80" y="354" width="240" height="34" rx="17" class="pill"/>
-<circle cx="303" cy="371" r="20.5" fill="#58a6ff" class="node"/>
-<text x="96" y="376" text-anchor="start" class="label">hu-qi/deep-domain-learning-skill</text>
+<rect x="80" y="354" width="112" height="34" rx="17" class="pill"/>
+<circle cx="175" cy="371" r="21.0" fill="#58a6ff" class="node"/>
+<text x="96" y="376" text-anchor="start" class="label">hu-qi/hu-qi</text>
 <path d="M 600 360 C 405 360, 405 419, 90 419" class="edge"/>
 
-<rect x="80" y="402" width="214" height="34" rx="17" class="pill"/>
-<circle cx="277" cy="419" r="19.1" fill="#58a6ff" class="node"/>
-<text x="96" y="424" text-anchor="start" class="label">datawhalechina/wow-fullstack</text>
+<rect x="80" y="402" width="240" height="34" rx="17" class="pill"/>
+<circle cx="303" cy="419" r="20.5" fill="#58a6ff" class="node"/>
+<text x="96" y="424" text-anchor="start" class="label">hu-qi/deep-domain-learning-skill</text>
 <path d="M 600 360 C 405 360, 405 467, 90 467" class="edge"/>
 
-<rect x="80" y="450" width="112" height="34" rx="17" class="pill"/>
-<circle cx="175" cy="467" r="18.5" fill="#58a6ff" class="node"/>
-<text x="96" y="472" text-anchor="start" class="label">hu-qi/hu-qi</text>
+<rect x="80" y="450" width="214" height="34" rx="17" class="pill"/>
+<circle cx="277" cy="467" r="19.1" fill="#58a6ff" class="node"/>
+<text x="96" y="472" text-anchor="start" class="label">datawhalechina/wow-fullstack</text>
 <path d="M 600 360 C 405 360, 405 515, 90 515" class="edge"/>
 
 <rect x="80" y="498" width="186" height="34" rx="17" class="pill"/>
