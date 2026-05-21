@@ -14,6 +14,7 @@ import html
 import json
 import math
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -29,6 +30,32 @@ ASSET_DIR = ROOT / "assets"
 OUT_SVG = ASSET_DIR / "github-developer-graph.svg"
 OUT_JSON = ASSET_DIR / "github-developer-graph.json"
 API = "https://api.github.com"
+
+ACTIVITY_ICONS = {
+    "Push": "↑",
+    "Watch": "★",
+    "Create": "+",
+    "PullRequest": "PR",
+    "PullRequestReview": "✓",
+    "Issues": "!",
+    "Fork": "⑂",
+    "Release": "↗",
+}
+LANG_BADGES = {
+    "Python": "Py",
+    "TypeScript": "TS",
+    "JavaScript": "JS",
+    "Rust": "Rs",
+    "Jupyter Notebook": "Nb",
+    "HTML": "H5",
+    "CSS": "CSS",
+    "C": "C",
+    "C++": "C++",
+    "Go": "Go",
+    "Shell": "Sh",
+    "Vue": "Vue",
+    "MDX": "MDX",
+}
 
 
 def request_json(path: str, *, query: dict[str, Any] | None = None) -> Any:
@@ -68,6 +95,11 @@ def clamp(text: str, limit: int = 34) -> str:
     """Trim long labels so they fit inside the SVG graph layout."""
     text = text.strip()
     return text if len(text) <= limit else text[: limit - 1] + "…"
+
+
+def node_id(value: str) -> str:
+    """Build a stable SVG id suffix from an arbitrary label."""
+    return re.sub(r"[^a-zA-Z0-9_-]", "-", value)
 
 
 def score_repo(repo: dict[str, Any]) -> float:
@@ -125,8 +157,7 @@ def build_dataset() -> dict[str, Any]:
         if not full_name or full_name.startswith(f"{USERNAME}/"):
             continue
         repo_counter[full_name] += 8
-        owner = full_name.split("/", 1)[0]
-        org_counter[owner] += 5
+        org_counter[full_name.split("/", 1)[0]] += 5
 
     for event in events:
         event_type = event.get("type", "Event").replace("Event", "")
@@ -159,30 +190,50 @@ def weight_size(weight: int) -> float:
     return 8 + min(13, math.sqrt(max(weight, 1)) * 1.6)
 
 
-def draw_pill(label: str, weight: int, x: int, y: int, color: str, anchor: str) -> str:
-    """Render a pill-shaped repository or organization node."""
+def draw_repo_pill(label: str, weight: int, x: int, y: int, anchor: str) -> str:
+    """Render a repository node with a small repository icon badge."""
     text = clamp(label)
-    width = min(240, max(112, 18 + len(text) * 7))
-    height = 34
-    r = weight_size(weight)
+    width = min(250, max(134, 38 + len(text) * 7))
     rect_x = x if anchor == "left" else x - width
-    text_x = rect_x + 16 if anchor == "left" else rect_x + width - 16
+    text_x = rect_x + 40 if anchor == "left" else rect_x + width - 16
     text_anchor = "start" if anchor == "left" else "end"
-    dot_x = rect_x + width - 17 if anchor == "left" else rect_x + 17
+    icon_x = rect_x + 17 if anchor == "left" else rect_x + width - 17
+    icon_size = weight_size(weight)
     return f'''
-<rect x="{rect_x}" y="{y}" width="{width}" height="{height}" rx="17" class="pill"/>
-<circle cx="{dot_x}" cy="{y + 17}" r="{r:.1f}" fill="{color}" class="node"/>
+<rect x="{rect_x}" y="{y}" width="{width}" height="34" rx="17" class="pill"/>
+<rect x="{icon_x - icon_size:.1f}" y="{y + 17 - icon_size:.1f}" width="{icon_size * 2:.1f}" height="{icon_size * 2:.1f}" rx="7" class="repo-icon"/>
+<text x="{icon_x}" y="{y + 21}" text-anchor="middle" class="icon-text">⌘</text>
 <text x="{text_x}" y="{y + 22}" text-anchor="{text_anchor}" class="label">{esc(text)}</text>'''
 
 
-def draw_group(title: str, items: list[tuple[str, int]], x: int, y: int, color: str, anchor: str, line_x: int) -> str:
-    """Render a vertical group of pill nodes with curved edges from the center."""
+def draw_org_pill(label: str, weight: int, x: int, y: int, anchor: str) -> str:
+    """Render an organization node with its GitHub avatar."""
+    text = clamp(label)
+    width = min(240, max(126, 40 + len(text) * 7))
+    rect_x = x if anchor == "left" else x - width
+    text_x = rect_x + 40 if anchor == "left" else rect_x + width - 16
+    text_anchor = "start" if anchor == "left" else "end"
+    avatar_x = rect_x + 17 if anchor == "left" else rect_x + width - 17
+    r = weight_size(weight)
+    clip = f"avatar-{node_id(label)}"
+    return f'''
+<clipPath id="{clip}"><circle cx="{avatar_x}" cy="{y + 17}" r="{r:.1f}"/></clipPath>
+<rect x="{rect_x}" y="{y}" width="{width}" height="34" rx="17" class="pill"/>
+<circle cx="{avatar_x}" cy="{y + 17}" r="{r:.1f}" class="avatar-fallback"/>
+<image href="https://github.com/{esc(label)}.png?size=64" x="{avatar_x - r:.1f}" y="{y + 17 - r:.1f}" width="{2 * r:.1f}" height="{2 * r:.1f}" clip-path="url(#{clip})" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="{avatar_x}" cy="{y + 17}" r="{r:.1f}" class="avatar-ring"/>
+<text x="{text_x}" y="{y + 22}" text-anchor="{text_anchor}" class="label">{esc(text)}</text>'''
+
+
+def draw_group(title: str, items: list[tuple[str, int]], x: int, y: int, anchor: str, line_x: int, *, kind: str) -> str:
+    """Render a vertical group of repo or org nodes with curved edges."""
     if not items:
         return ""
     parts = [f'<text x="{x}" y="{y - 18}" text-anchor="{anchor}" class="section">{esc(title)}</text>']
     for idx, (label, weight) in enumerate(items):
         py = y + idx * 48
-        pill = draw_pill(label, int(weight), x if anchor == "start" else x, py, color, "left" if anchor == "start" else "right")
+        side = "left" if anchor == "start" else "right"
+        pill = draw_org_pill(label, int(weight), x, py, side) if kind == "org" else draw_repo_pill(label, int(weight), x, py, side)
         edge_end_x = x + 10 if anchor == "start" else x - 10
         edge_end_y = py + 17
         parts.append(f'<path d="M 600 360 C {line_x} 360, {line_x} {edge_end_y}, {edge_end_x} {edge_end_y}" class="edge"/>')
@@ -191,7 +242,7 @@ def draw_group(title: str, items: list[tuple[str, int]], x: int, y: int, color: 
 
 
 def draw_bottom(items: list[tuple[str, int]], start_x: int, y: int) -> str:
-    """Render the language row at the bottom of the graph."""
+    """Render language badges at the bottom of the graph."""
     if not items:
         return ""
     parts = [f'<text x="600" y="{y - 30}" text-anchor="middle" class="section">Languages</text>']
@@ -199,14 +250,16 @@ def draw_bottom(items: list[tuple[str, int]], start_x: int, y: int) -> str:
     for idx, (label, weight) in enumerate(items):
         x = start_x + idx * gap
         r = weight_size(int(weight)) + 2
+        badge = LANG_BADGES.get(label, clamp(label, 3))
         parts.append(f'<path d="M 600 360 C 600 455, {x} 455, {x} {y}" class="edge"/>')
-        parts.append(f'<circle cx="{x}" cy="{y}" r="{r:.1f}" fill="#7ee787" class="node"/>')
+        parts.append(f'<rect x="{x - r:.1f}" y="{y - r:.1f}" width="{2 * r:.1f}" height="{2 * r:.1f}" rx="9" class="lang-icon"/>')
+        parts.append(f'<text x="{x}" y="{y + 4}" text-anchor="middle" class="lang-text">{esc(badge)}</text>')
         parts.append(f'<text x="{x}" y="{y + r + 17:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 14))}</text>')
     return "\n".join(parts)
 
 
 def draw_top(items: list[tuple[str, int]], start_x: int, y: int) -> str:
-    """Render recent activity nodes in the open space above the center node."""
+    """Render recent activity icon badges above the center node."""
     if not items:
         return ""
     parts = ['<text x="600" y="205" text-anchor="middle" class="section">Recent Activity</text>']
@@ -214,8 +267,10 @@ def draw_top(items: list[tuple[str, int]], start_x: int, y: int) -> str:
     for idx, (label, weight) in enumerate(items):
         x = start_x + idx * gap
         r = weight_size(int(weight)) + 2
+        icon = ACTIVITY_ICONS.get(label, label[:2])
         parts.append(f'<path d="M 600 360 C 600 310, {x} 300, {x} {y}" class="edge"/>')
-        parts.append(f'<circle cx="{x}" cy="{y}" r="{r:.1f}" fill="#ffa657" class="node"/>')
+        parts.append(f'<rect x="{x - r:.1f}" y="{y - r:.1f}" width="{2 * r:.1f}" height="{2 * r:.1f}" rx="{min(12, r):.1f}" class="activity-icon"/>')
+        parts.append(f'<text x="{x}" y="{y + 4}" text-anchor="middle" class="activity-text">{esc(icon)}</text>')
         parts.append(f'<text x="{x}" y="{y - r - 10:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 16))}</text>')
     return "\n".join(parts)
 
@@ -243,9 +298,16 @@ def render_svg(data: dict[str, Any]) -> str:
   .label {{ fill: #dbe7ff; font: 600 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
   .small {{ fill: #8b949e; font: 500 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
   .edge {{ stroke: rgba(88,166,255,.24); stroke-width: 1.4; fill: none; }}
-  .node {{ stroke: rgba(255,255,255,.82); stroke-width: 1.2; filter: drop-shadow(0 0 12px rgba(88,166,255,.26)); }}
   .pill {{ fill: rgba(255,255,255,.055); stroke: rgba(255,255,255,.14); }}
   .core {{ fill: url(#core); stroke: rgba(255,255,255,.85); stroke-width: 2; filter: drop-shadow(0 0 24px rgba(126,231,135,.35)); }}
+  .repo-icon {{ fill: #58a6ff; stroke: rgba(255,255,255,.7); stroke-width: 1; filter: drop-shadow(0 0 10px rgba(88,166,255,.24)); }}
+  .icon-text {{ fill: #ffffff; font: 800 11px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
+  .avatar-fallback {{ fill: #d2a8ff; }}
+  .avatar-ring {{ fill: none; stroke: rgba(255,255,255,.86); stroke-width: 1.2; filter: drop-shadow(0 0 10px rgba(210,168,255,.24)); }}
+  .lang-icon {{ fill: #7ee787; stroke: rgba(255,255,255,.76); stroke-width: 1; filter: drop-shadow(0 0 10px rgba(126,231,135,.24)); }}
+  .lang-text {{ fill: #0d1117; font: 800 11px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
+  .activity-icon {{ fill: #ffa657; stroke: rgba(255,255,255,.78); stroke-width: 1; filter: drop-shadow(0 0 10px rgba(255,166,87,.28)); }}
+  .activity-text {{ fill: #0d1117; font: 900 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
   @media (prefers-color-scheme: light) {{
     .bg {{ fill: #ffffff; }}
     .card {{ fill: #f6f8fa; stroke: #d0d7de; }}
@@ -269,8 +331,8 @@ def render_svg(data: dict[str, Any]) -> str:
 <text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated {esc(data.get('generated_at', ''))}</text>
 
 {draw_top(events, event_start, 245)}
-{draw_group('Repositories', repos, 80, 210, '#58a6ff', 'start', 405)}
-{draw_group('Communities / Orgs', orgs, 1120, 235, '#d2a8ff', 'end', 795)}
+{draw_group('Repositories', repos, 80, 210, 'start', 405, kind='repo')}
+{draw_group('Communities / Orgs', orgs, 1120, 235, 'end', 795, kind='org')}
 {draw_bottom(languages, lang_start, 610)}
 
 <circle cx="600" cy="360" r="86" class="core"/>
