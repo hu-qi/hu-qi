@@ -206,15 +206,15 @@ def draw_bottom(items: list[tuple[str, int]], start_x: int, y: int) -> str:
 
 
 def draw_top(items: list[tuple[str, int]], start_x: int, y: int) -> str:
-    """Render recent activity nodes above the center without overlapping labels."""
+    """Render recent activity nodes in the open space above the center node."""
     if not items:
         return ""
-    parts = ['<text x="600" y="128" text-anchor="middle" class="section">Recent Activity</text>']
+    parts = ['<text x="600" y="205" text-anchor="middle" class="section">Recent Activity</text>']
     gap = 130
     for idx, (label, weight) in enumerate(items):
         x = start_x + idx * gap
         r = weight_size(int(weight)) + 2
-        parts.append(f'<path d="M 600 360 C 600 260, {x} 260, {x} {y}" class="edge"/>')
+        parts.append(f'<path d="M 600 360 C 600 310, {x} 300, {x} {y}" class="edge"/>')
         parts.append(f'<circle cx="{x}" cy="{y}" r="{r:.1f}" fill="#ffa657" class="node"/>')
         parts.append(f'<text x="{x}" y="{y - r - 10:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 16))}</text>')
     return "\n".join(parts)
@@ -268,7 +268,7 @@ def render_svg(data: dict[str, Any]) -> str:
 <text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · {esc(USERNAME)}</text>
 <text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated {esc(data.get('generated_at', ''))}</text>
 
-{draw_top(events, event_start, 190)}
+{draw_top(events, event_start, 245)}
 {draw_group('Repositories', repos, 80, 210, '#58a6ff', 'start', 405)}
 {draw_group('Communities / Orgs', orgs, 1120, 235, '#d2a8ff', 'end', 795)}
 {draw_bottom(languages, lang_start, 610)}
