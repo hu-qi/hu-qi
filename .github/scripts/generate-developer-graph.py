@@ -20,7 +20,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -63,7 +63,7 @@ def esc(value: Any) -> str:
     return html.escape(str(value), quote=True)
 
 
-def clamp(text: str, limit: int = 28) -> str:
+def clamp(text: str, limit: int = 34) -> str:
     text = text.strip()
     return text if len(text) <= limit else text[: limit - 1] + "…"
 
@@ -143,40 +143,86 @@ def build_dataset() -> dict[str, Any]:
             "followers": user.get("followers", 0),
             "following": user.get("following", 0),
         },
-        "repos": repo_counter.most_common(10),
-        "orgs": org_counter.most_common(8),
-        "languages": lang_counter.most_common(8),
-        "events": event_counter.most_common(6),
+        "repos": repo_counter.most_common(7),
+        "orgs": org_counter.most_common(6),
+        "languages": lang_counter.most_common(7),
+        "events": event_counter.most_common(5),
     }
 
 
-def polar(cx: float, cy: float, radius: float, angle: float) -> tuple[float, float]:
-    return cx + radius * math.cos(angle), cy + radius * math.sin(angle)
+def weight_size(weight: int) -> float:
+    return 8 + min(13, math.sqrt(max(weight, 1)) * 1.6)
 
 
-def draw_nodes(title: str, items: list[tuple[str, int]], cx: int, cy: int, radius: int, color: str) -> str:
+def draw_pill(label: str, weight: int, x: int, y: int, color: str, anchor: str) -> str:
+    text = clamp(label)
+    width = min(240, max(112, 18 + len(text) * 7))
+    height = 34
+    r = weight_size(weight)
+    rect_x = x if anchor == "left" else x - width
+    text_x = rect_x + 16 if anchor == "left" else rect_x + width - 16
+    text_anchor = "start" if anchor == "left" else "end"
+    dot_x = rect_x + width - 17 if anchor == "left" else rect_x + 17
+    return f'''
+<rect x="{rect_x}" y="{y}" width="{width}" height="{height}" rx="17" class="pill"/>
+<circle cx="{dot_x}" cy="{y + 17}" r="{r:.1f}" fill="{color}" class="node"/>
+<text x="{text_x}" y="{y + 22}" text-anchor="{text_anchor}" class="label">{esc(text)}</text>'''
+
+
+def draw_group(title: str, items: list[tuple[str, int]], x: int, y: int, color: str, anchor: str, line_x: int) -> str:
     if not items:
         return ""
-    parts = [f'<text x="{cx}" y="{cy - radius - 24}" text-anchor="middle" class="section">{esc(title)}</text>']
-    total = len(items)
+    parts = [f'<text x="{x}" y="{y - 18}" text-anchor="{anchor}" class="section">{esc(title)}</text>']
     for idx, (label, weight) in enumerate(items):
-        angle = -math.pi / 2 + (idx / max(total, 1)) * math.tau
-        x, y = polar(cx, cy, radius, angle)
-        size = 8 + min(18, math.sqrt(max(weight, 1)) * 2.2)
-        parts.append(f'<path d="M 600 250 Q {(600+x)/2:.1f} {(250+y)/2 - 60:.1f} {x:.1f} {y:.1f}" class="edge"/>')
-        parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{size:.1f}" fill="{color}" class="node"/>')
-        parts.append(f'<text x="{x:.1f}" y="{y + size + 15:.1f}" text-anchor="middle" class="label">{esc(clamp(label))}</text>')
+        py = y + idx * 48
+        pill = draw_pill(label, int(weight), x if anchor == "start" else x, py, color, "left" if anchor == "start" else "right")
+        edge_end_x = x + 10 if anchor == "start" else x - 10
+        edge_end_y = py + 17
+        parts.append(f'<path d="M 600 360 C {line_x} 360, {line_x} {edge_end_y}, {edge_end_x} {edge_end_y}" class="edge"/>')
+        parts.append(pill)
+    return "\n".join(parts)
+
+
+def draw_bottom(items: list[tuple[str, int]], start_x: int, y: int) -> str:
+    if not items:
+        return ""
+    parts = [f'<text x="600" y="{y - 30}" text-anchor="middle" class="section">Languages</text>']
+    gap = 118
+    count = len(items)
+    for idx, (label, weight) in enumerate(items):
+        x = start_x + idx * gap
+        r = weight_size(int(weight)) + 2
+        parts.append(f'<path d="M 600 360 C 600 455, {x} 455, {x} {y}" class="edge"/>')
+        parts.append(f'<circle cx="{x}" cy="{y}" r="{r:.1f}" fill="#7ee787" class="node"/>')
+        parts.append(f'<text x="{x}" y="{y + r + 17:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 14))}</text>')
+    return "\n".join(parts)
+
+
+def draw_top(items: list[tuple[str, int]], start_x: int, y: int) -> str:
+    if not items:
+        return ""
+    parts = [f'<text x="600" y="{y - 28}" text-anchor="middle" class="section">Recent Activity</text>']
+    gap = 130
+    for idx, (label, weight) in enumerate(items):
+        x = start_x + idx * gap
+        r = weight_size(int(weight)) + 2
+        parts.append(f'<path d="M 600 360 C 600 260, {x} 260, {x} {y}" class="edge"/>')
+        parts.append(f'<circle cx="{x}" cy="{y}" r="{r:.1f}" fill="#ffa657" class="node"/>')
+        parts.append(f'<text x="{x}" y="{y - r - 9:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 16))}</text>')
     return "\n".join(parts)
 
 
 def render_svg(data: dict[str, Any]) -> str:
-    repos = data.get("repos", [])[:8]
+    repos = data.get("repos", [])[:7]
     orgs = data.get("orgs", [])[:6]
     languages = data.get("languages", [])[:7]
     events = data.get("events", [])[:5]
     user = data.get("user", {})
 
-    return f'''<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+    lang_start = 600 - (max(len(languages), 1) - 1) * 118 // 2
+    event_start = 600 - (max(len(events), 1) - 1) * 130 // 2
+
+    return f'''<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
 <title id="title">{esc(USERNAME)} GitHub Developer Relationship Graph</title>
 <desc id="desc">Generated from GitHub profile, repositories, authored issues and pull requests, and public events.</desc>
 <style>
@@ -187,9 +233,10 @@ def render_svg(data: dict[str, Any]) -> str:
   .section {{ fill: #c9d1d9; font: 700 17px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
   .label {{ fill: #dbe7ff; font: 600 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
   .small {{ fill: #8b949e; font: 500 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }}
-  .edge {{ stroke: rgba(88,166,255,.26); stroke-width: 1.4; fill: none; }}
-  .node {{ stroke: rgba(255,255,255,.82); stroke-width: 1.2; filter: drop-shadow(0 0 12px rgba(88,166,255,.28)); }}
-  .core {{ fill: url(#core); stroke: rgba(255,255,255,.82); stroke-width: 2; filter: drop-shadow(0 0 24px rgba(126,231,135,.35)); }}
+  .edge {{ stroke: rgba(88,166,255,.24); stroke-width: 1.4; fill: none; }}
+  .node {{ stroke: rgba(255,255,255,.82); stroke-width: 1.2; filter: drop-shadow(0 0 12px rgba(88,166,255,.26)); }}
+  .pill {{ fill: rgba(255,255,255,.055); stroke: rgba(255,255,255,.14); }}
+  .core {{ fill: url(#core); stroke: rgba(255,255,255,.85); stroke-width: 2; filter: drop-shadow(0 0 24px rgba(126,231,135,.35)); }}
   @media (prefers-color-scheme: light) {{
     .bg {{ fill: #ffffff; }}
     .card {{ fill: #f6f8fa; stroke: #d0d7de; }}
@@ -197,31 +244,32 @@ def render_svg(data: dict[str, Any]) -> str:
     .sub, .small {{ fill: #57606a; }}
     .section {{ fill: #24292f; }}
     .label {{ fill: #24292f; }}
-    .edge {{ stroke: rgba(9,105,218,.25); }}
+    .edge {{ stroke: rgba(9,105,218,.22); }}
+    .pill {{ fill: #ffffff; stroke: #d0d7de; }}
   }}
 </style>
 <defs>
-  <linearGradient id="core" x1="520" y1="170" x2="680" y2="330" gradientUnits="userSpaceOnUse">
+  <linearGradient id="core" x1="520" y1="280" x2="680" y2="440" gradientUnits="userSpaceOnUse">
     <stop stop-color="#7ee787"/>
     <stop offset="1" stop-color="#58a6ff"/>
   </linearGradient>
 </defs>
-<rect width="1200" height="720" rx="28" class="bg"/>
-<rect x="32" y="32" width="1136" height="656" rx="26" class="card"/>
-<text x="600" y="86" text-anchor="middle" class="title">GitHub Developer Graph · {esc(USERNAME)}</text>
-<text x="600" y="116" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated {esc(data.get('generated_at', ''))}</text>
+<rect width="1200" height="760" rx="28" class="bg"/>
+<rect x="32" y="32" width="1136" height="696" rx="26" class="card"/>
+<text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · {esc(USERNAME)}</text>
+<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated {esc(data.get('generated_at', ''))}</text>
 
-{draw_nodes('Repositories', repos, 255, 348, 185, '#58a6ff')}
-{draw_nodes('Communities / Orgs', orgs, 945, 348, 168, '#d2a8ff')}
-{draw_nodes('Languages', languages, 600, 560, 118, '#7ee787')}
-{draw_nodes('Activity Types', events, 600, 142, 92, '#ffa657')}
+{draw_top(events, event_start, 178)}
+{draw_group('Repositories', repos, 80, 210, '#58a6ff', 'start', 405)}
+{draw_group('Communities / Orgs', orgs, 1120, 235, '#d2a8ff', 'end', 795)}
+{draw_bottom(languages, lang_start, 610)}
 
-<circle cx="600" cy="250" r="82" class="core"/>
-<text x="600" y="238" text-anchor="middle" style="fill:#0d1117;font:800 28px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">{esc(user.get('name') or USERNAME)}</text>
-<text x="600" y="266" text-anchor="middle" style="fill:#0d1117;font:700 14px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">@{esc(USERNAME)}</text>
-<text x="600" y="292" text-anchor="middle" style="fill:#0d1117;font:700 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">{esc(user.get('public_repos', 0))} repos · {esc(user.get('followers', 0))} followers</text>
+<circle cx="600" cy="360" r="86" class="core"/>
+<text x="600" y="345" text-anchor="middle" style="fill:#0d1117;font:800 28px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">{esc(user.get('name') or USERNAME)}</text>
+<text x="600" y="374" text-anchor="middle" style="fill:#0d1117;font:700 14px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">@{esc(USERNAME)}</text>
+<text x="600" y="401" text-anchor="middle" style="fill:#0d1117;font:700 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">{esc(user.get('public_repos', 0))} repos · {esc(user.get('followers', 0))} followers</text>
 
-<text x="600" y="666" text-anchor="middle" class="small">Generated by .github/scripts/generate-developer-graph.py · update via GitHub Actions</text>
+<text x="600" y="704" text-anchor="middle" class="small">Generated by .github/scripts/generate-developer-graph.py · update via GitHub Actions</text>
 </svg>
 '''
 
