@@ -1,0 +1,50 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">hu-qi GitHub Developer Relationship Graph</title>
+<desc id="desc">Placeholder graph. GitHub Actions will update it using live GitHub data.</desc>
+<style>
+  .bg { fill: #0d1117; }
+  .card { fill: rgba(255,255,255,.045); stroke: rgba(255,255,255,.12); }
+  .title { fill: #f0f6fc; font: 700 34px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .sub { fill: #8b949e; font: 500 15px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .section { fill: #c9d1d9; font: 700 17px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .label { fill: #dbe7ff; font: 600 13px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .small { fill: #8b949e; font: 500 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .edge { stroke: rgba(88,166,255,.26); stroke-width: 1.4; fill: none; }
+  .node { stroke: rgba(255,255,255,.82); stroke-width: 1.2; }
+  .core { fill: url(#core); stroke: rgba(255,255,255,.82); stroke-width: 2; }
+  @media (prefers-color-scheme: light) {
+    .bg { fill: #ffffff; }
+    .card { fill: #f6f8fa; stroke: #d0d7de; }
+    .title { fill: #24292f; }
+    .sub, .small { fill: #57606a; }
+    .section { fill: #24292f; }
+    .label { fill: #24292f; }
+    .edge { stroke: rgba(9,105,218,.25); }
+  }
+</style>
+<defs>
+  <linearGradient id="core" x1="520" y1="170" x2="680" y2="330" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#7ee787"/>
+    <stop offset="1" stop-color="#58a6ff"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="720" rx="28" class="bg"/>
+<rect x="32" y="32" width="1136" height="656" rx="26" class="card"/>
+<text x="600" y="86" text-anchor="middle" class="title">GitHub Developer Graph · hu-qi</text>
+<text x="600" y="116" text-anchor="middle" class="sub">Live graph generated from GitHub profile · repos · PRs / issues · public events</text>
+
+<path d="M 600 250 Q 430 160 255 210" class="edge"/><circle cx="255" cy="210" r="22" fill="#58a6ff" class="node"/><text x="255" y="248" text-anchor="middle" class="label">Repositories</text>
+<path d="M 600 250 Q 395 305 230 365" class="edge"/><circle cx="230" cy="365" r="18" fill="#58a6ff" class="node"/><text x="230" y="399" text-anchor="middle" class="label">Open Source</text>
+<path d="M 600 250 Q 427 458 330 535" class="edge"/><circle cx="330" cy="535" r="16" fill="#7ee787" class="node"/><text x="330" y="568" text-anchor="middle" class="label">Languages</text>
+<path d="M 600 250 Q 775 160 945 210" class="edge"/><circle cx="945" cy="210" r="22" fill="#d2a8ff" class="node"/><text x="945" y="248" text-anchor="middle" class="label">Communities</text>
+<path d="M 600 250 Q 805 305 970 365" class="edge"/><circle cx="970" cy="365" r="18" fill="#d2a8ff" class="node"/><text x="970" y="399" text-anchor="middle" class="label">Collaborations</text>
+<path d="M 600 250 Q 600 440 600 555" class="edge"/><circle cx="600" cy="555" r="18" fill="#7ee787" class="node"/><text x="600" y="590" text-anchor="middle" class="label">Tech Stack</text>
+<path d="M 600 250 Q 600 125 600 145" class="edge"/><circle cx="600" cy="145" r="18" fill="#ffa657" class="node"/><text x="600" y="181" text-anchor="middle" class="label">Recent Activity</text>
+
+<circle cx="600" cy="250" r="82" class="core"/>
+<text x="600" y="238" text-anchor="middle" style="fill:#0d1117;font:800 28px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">Hu Qi</text>
+<text x="600" y="266" text-anchor="middle" style="fill:#0d1117;font:700 14px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">@hu-qi</text>
+<text x="600" y="292" text-anchor="middle" style="fill:#0d1117;font:700 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;">auto-updated by GitHub Actions</text>
+
+<text x="600" y="666" text-anchor="middle" class="small">Run “Update developer graph” workflow to replace this placeholder with live GitHub data.</text>
+</svg>
