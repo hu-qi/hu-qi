@@ -24,6 +24,7 @@ OCTICON = {
     "PullRequest":"M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm10 0a2.25 2.25 0 1 1 1.5 2.122V8A3.75 3.75 0 0 1 9.25 11.75H8.5a.75.75 0 0 1 0-1.5h.75A2.25 2.25 0 0 0 11.5 8V5.372A2.25 2.25 0 0 1 11.5 3.25Z",
     "Fork":"M5 3.25a2.25 2.25 0 1 1 1.5 2.122v1.001A3.75 3.75 0 0 0 8 6.75a3.75 3.75 0 0 0 1.5-.377V5.372a2.25 2.25 0 1 1 1.5 0v1.001A5.25 5.25 0 0 1 8.75 7.95v2.678a2.251 2.251 0 1 1-1.5 0V7.95A5.25 5.25 0 0 1 5 6.373V5.372A2.25 2.25 0 0 1 5 3.25Z",
 }
+REPO_PATH = "M2 2.5A2.5 2.5 0 0 1 4.5 0h8.25A1.25 1.25 0 0 1 14 1.25v12.5A1.25 1.25 0 0 1 12.75 15H4.5A2.5 2.5 0 0 1 2 12.5v-10Zm10.5-1H4.5a1 1 0 0 0-1 1v8.7a2.5 2.5 0 0 1 1-.2h8v-9.5Zm-8 11a1 1 0 0 0 0 2h8v-2h-8Z"
 
 def esc(v: Any) -> str: return html.escape(str(v), quote=True)
 def clamp(s: str, n: int = 34) -> str: return s if len(s.strip()) <= n else s.strip()[:n-1] + "…"
@@ -83,8 +84,9 @@ def dataset() -> dict[str, Any]:
     return {"generated_at":time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),"user":{"login":user.get("login",USERNAME),"name":user.get("name") or USERNAME,"public_repos":user.get("public_repos",0),"followers":user.get("followers",0),"following":user.get("following",0)},"repos":rc.most_common(7),"orgs":oc.most_common(6),"languages":lc.most_common(7),"events":ec.most_common(5)}
 
 def repo_node(label: str, w: int, y: int) -> str:
-    width = min(265, max(150, 46 + len(clamp(label))*7)); r = sz(w)
-    return f'<rect x="80" y="{y}" width="{width}" height="34" rx="17" class="pill"/><rect x="{97-r:.1f}" y="{y+17-r:.1f}" width="{2*r:.1f}" height="{2*r:.1f}" rx="7" class="repo-icon"/><path d="M91 {y+11}h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H91a2 2 0 0 1-2-2V{y+13}a2 2 0 0 1 2-2Zm1.5 3v8h9v-8h-9Z" class="repo-path"/><text x="120" y="{y+22}" class="label">{esc(clamp(label))}</text>'
+    width = min(265, max(150, 46 + len(clamp(label))*7)); r = sz(w); s = min(17, 2*r-10) / 16
+    icon = f'<g transform="translate({97-8*s:.1f} {y+17-8*s:.1f}) scale({s:.3f})"><path d="{REPO_PATH}" class="repo-path"/></g>'
+    return f'<rect x="80" y="{y}" width="{width}" height="34" rx="17" class="pill"/><rect x="{97-r:.1f}" y="{y+17-r:.1f}" width="{2*r:.1f}" height="{2*r:.1f}" rx="7" class="repo-icon"/>{icon}<text x="120" y="{y+22}" class="label">{esc(clamp(label))}</text>'
 
 def org_node(label: str, w: int, y: int) -> str:
     width = min(250, max(142, 46 + len(clamp(label))*7)); x = 1120 - width; ax = 1102; r = sz(w); clip = "av-" + nid(label); img = avatar(label)
@@ -115,10 +117,10 @@ def oct(label: str, x: int, y: int, size: float) -> str:
 
 def activity(items: list[tuple[str,int]]) -> str:
     if not items: return ""
-    start = 600 - (len(items)-1)*118//2; p=['<text x="600" y="205" text-anchor="middle" class="section">Recent Activity</text>']
+    start = 600 - (len(items)-1)*118//2; p=['<text x="600" y="165" text-anchor="middle" class="section">Recent Activity</text>']
     for i,(l,w) in enumerate(items):
-        x=start+i*118; y=245; r=sz(int(w))+4
-        p += [f'<path d="M600 360 C600 295 {x} 300 {x} {y}" class="edge"/>', f'<rect x="{x-r:.1f}" y="{y-r:.1f}" width="{2*r:.1f}" height="{2*r:.1f}" rx="10" class="activity-icon"/>', oct(l,x,y,min(18,2*r-10)), f'<text x="{x}" y="{y-r-10:.1f}" text-anchor="middle" class="label">{esc(clamp(l,16))}</text>']
+        x=start+i*118; y=225; r=sz(int(w))+4
+        p += [f'<path d="M600 360 C600 295 {x} 285 {x} {y}" class="edge"/>', f'<rect x="{x-r:.1f}" y="{y-r:.1f}" width="{2*r:.1f}" height="{2*r:.1f}" rx="10" class="activity-icon"/>', oct(l,x,y,min(18,2*r-10)), f'<text x="{x}" y="{y-r-10:.1f}" text-anchor="middle" class="label">{esc(clamp(l,16))}</text>']
     return "\n".join(p)
 
 def svg(data: dict[str, Any]) -> str:
