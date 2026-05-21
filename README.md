@@ -73,6 +73,34 @@ mindmap
 
 ---
 
+## 🕸️ GitHub developer graph
+
+<div align="center">
+
+<img src="assets/github-developer-graph.svg" alt="Hu Qi GitHub developer relationship graph" />
+
+</div>
+
+<details>
+<summary><b>How this graph is generated</b></summary>
+
+<br />
+
+This graph is generated from GitHub data and updated by GitHub Actions.
+
+| Signal | Meaning |
+| --- | --- |
+| Repositories | Own repos ranked by stars, forks, and recent activity |
+| Communities / Orgs | External repositories and organizations touched by authored issues, PRs, or public events |
+| Languages | Language distribution from public repositories |
+| Activity Types | Recent public GitHub event types |
+
+The generator lives in `.github/scripts/generate-developer-graph.py`, and the workflow lives in `.github/workflows/update-developer-graph.yml`.
+
+</details>
+
+---
+
 ## 🧭 Explore my profile
 
 <details open>
@@ -193,6 +221,7 @@ This profile README intentionally uses mostly native GitHub-flavored Markdown fe
 - `details / summary` for clickable sections
 - `picture` for light/dark adaptive GitHub stats
 - `mermaid` for an interactive-looking knowledge map without custom JavaScript
+- generated SVG developer relationship graph from GitHub data
 - fewer fragile external widgets; removed abandoned-style counters and skill-chart dependencies
 
 <div align="center">
