@@ -35,7 +35,16 @@ jobs:
         run: python .github/scripts/generate-developer-graph.py
 
       - name: Commit updated graph
-        uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842  # v5.0.1
-        with:
-          commit_message: Update GitHub developer graph
-          file_pattern: assets/github-developer-graph.svg assets/github-developer-graph.json
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- assets/github-developer-graph.svg assets/github-developer-graph.json; then
+            echo "No developer graph changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-developer-graph.svg assets/github-developer-graph.json
+          git commit -m "Update GitHub developer graph"
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
