@@ -10,9 +10,16 @@
   .label { fill: #dbe7ff; font: 600 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
   .small { fill: #8b949e; font: 500 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
   .edge { stroke: rgba(88,166,255,.24); stroke-width: 1.4; fill: none; }
-  .node { stroke: rgba(255,255,255,.82); stroke-width: 1.2; filter: drop-shadow(0 0 12px rgba(88,166,255,.26)); }
   .pill { fill: rgba(255,255,255,.055); stroke: rgba(255,255,255,.14); }
   .core { fill: url(#core); stroke: rgba(255,255,255,.85); stroke-width: 2; filter: drop-shadow(0 0 24px rgba(126,231,135,.35)); }
+  .repo-icon { fill: #58a6ff; stroke: rgba(255,255,255,.7); stroke-width: 1; filter: drop-shadow(0 0 10px rgba(88,166,255,.24)); }
+  .icon-text { fill: #ffffff; font: 800 11px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .avatar-fallback { fill: #d2a8ff; }
+  .avatar-ring { fill: none; stroke: rgba(255,255,255,.86); stroke-width: 1.2; filter: drop-shadow(0 0 10px rgba(210,168,255,.24)); }
+  .lang-icon { fill: #7ee787; stroke: rgba(255,255,255,.76); stroke-width: 1; filter: drop-shadow(0 0 10px rgba(126,231,135,.24)); }
+  .lang-text { fill: #0d1117; font: 800 11px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
+  .activity-icon { fill: #ffa657; stroke: rgba(255,255,255,.78); stroke-width: 1; filter: drop-shadow(0 0 10px rgba(255,166,87,.28)); }
+  .activity-text { fill: #0d1117; font: 900 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; }
   @media (prefers-color-scheme: light) {
     .bg { fill: #ffffff; }
     .card { fill: #f6f8fa; stroke: #d0d7de; }
@@ -33,112 +40,149 @@
 <rect width="1200" height="760" rx="28" class="bg"/>
 <rect x="32" y="32" width="1136" height="696" rx="26" class="card"/>
 <text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · hu-qi</text>
-<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 09:13:16 UTC</text>
+<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 09:16:17 UTC</text>
 
 <text x="600" y="205" text-anchor="middle" class="section">Recent Activity</text>
 <path d="M 600 360 C 600 310, 340 300, 340 245" class="edge"/>
-<circle cx="340" cy="245" r="23.0" fill="#ffa657" class="node"/>
+<rect x="317.0" y="222.0" width="46.0" height="46.0" rx="12.0" class="activity-icon"/>
+<text x="340" y="249" text-anchor="middle" class="activity-text">↑</text>
 <text x="340" y="212.0" text-anchor="middle" class="label">Push</text>
 <path d="M 600 360 C 600 310, 470 300, 470 245" class="edge"/>
-<circle cx="470" cy="245" r="14.8" fill="#ffa657" class="node"/>
+<rect x="455.2" y="230.2" width="29.6" height="29.6" rx="12.0" class="activity-icon"/>
+<text x="470" y="249" text-anchor="middle" class="activity-text">★</text>
 <text x="470" y="220.2" text-anchor="middle" class="label">Watch</text>
 <path d="M 600 360 C 600 310, 600 300, 600 245" class="edge"/>
-<circle cx="600" cy="245" r="13.6" fill="#ffa657" class="node"/>
+<rect x="586.4" y="231.4" width="27.2" height="27.2" rx="12.0" class="activity-icon"/>
+<text x="600" y="249" text-anchor="middle" class="activity-text">+</text>
 <text x="600" y="221.4" text-anchor="middle" class="label">Create</text>
 <path d="M 600 360 C 600 310, 730 300, 730 245" class="edge"/>
-<circle cx="730" cy="245" r="12.3" fill="#ffa657" class="node"/>
+<rect x="717.7" y="232.7" width="24.5" height="24.5" rx="12.0" class="activity-icon"/>
+<text x="730" y="249" text-anchor="middle" class="activity-text">PR</text>
 <text x="730" y="222.7" text-anchor="middle" class="label">PullRequest</text>
 <path d="M 600 360 C 600 310, 860 300, 860 245" class="edge"/>
-<circle cx="860" cy="245" r="11.6" fill="#ffa657" class="node"/>
+<rect x="848.4" y="233.4" width="23.2" height="23.2" rx="11.6" class="activity-icon"/>
+<text x="860" y="249" text-anchor="middle" class="activity-text">⑂</text>
 <text x="860" y="223.4" text-anchor="middle" class="label">Fork</text>
 <text x="80" y="192" text-anchor="start" class="section">Repositories</text>
 <path d="M 600 360 C 405 360, 405 227, 90 227" class="edge"/>
 
-<rect x="80" y="210" width="116" height="34" rx="17" class="pill"/>
-<circle cx="179" cy="227" r="21.0" fill="#58a6ff" class="node"/>
-<text x="96" y="232" text-anchor="start" class="label">hu-qi/x-cli-rs</text>
+<rect x="80" y="210" width="136" height="34" rx="17" class="pill"/>
+<rect x="76.0" y="206.0" width="42.0" height="42.0" rx="7" class="repo-icon"/>
+<text x="97" y="231" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="232" text-anchor="start" class="label">hu-qi/x-cli-rs</text>
 <path d="M 600 360 C 405 360, 405 275, 90 275" class="edge"/>
 
-<rect x="80" y="258" width="207" height="34" rx="17" class="pill"/>
-<circle cx="270" cy="275" r="21.0" fill="#58a6ff" class="node"/>
-<text x="96" y="280" text-anchor="start" class="label">oh-awesome/flutter_packages</text>
+<rect x="80" y="258" width="227" height="34" rx="17" class="pill"/>
+<rect x="76.0" y="254.0" width="42.0" height="42.0" rx="7" class="repo-icon"/>
+<text x="97" y="279" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="280" text-anchor="start" class="label">oh-awesome/flutter_packages</text>
 <path d="M 600 360 C 405 360, 405 323, 90 323" class="edge"/>
 
-<rect x="80" y="306" width="240" height="34" rx="17" class="pill"/>
-<circle cx="303" cy="323" r="21.0" fill="#58a6ff" class="node"/>
-<text x="96" y="328" text-anchor="start" class="label">Open-Source-Bazaar/feishu-action</text>
+<rect x="80" y="306" width="250" height="34" rx="17" class="pill"/>
+<rect x="76.0" y="302.0" width="42.0" height="42.0" rx="7" class="repo-icon"/>
+<text x="97" y="327" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="328" text-anchor="start" class="label">Open-Source-Bazaar/feishu-action</text>
 <path d="M 600 360 C 405 360, 405 371, 90 371" class="edge"/>
 
-<rect x="80" y="354" width="112" height="34" rx="17" class="pill"/>
-<circle cx="175" cy="371" r="21.0" fill="#58a6ff" class="node"/>
-<text x="96" y="376" text-anchor="start" class="label">hu-qi/hu-qi</text>
+<rect x="80" y="354" width="134" height="34" rx="17" class="pill"/>
+<rect x="76.0" y="350.0" width="42.0" height="42.0" rx="7" class="repo-icon"/>
+<text x="97" y="375" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="376" text-anchor="start" class="label">hu-qi/hu-qi</text>
 <path d="M 600 360 C 405 360, 405 419, 90 419" class="edge"/>
 
-<rect x="80" y="402" width="240" height="34" rx="17" class="pill"/>
-<circle cx="303" cy="419" r="20.5" fill="#58a6ff" class="node"/>
-<text x="96" y="424" text-anchor="start" class="label">hu-qi/deep-domain-learning-skill</text>
+<rect x="80" y="402" width="250" height="34" rx="17" class="pill"/>
+<rect x="76.5" y="398.5" width="41.0" height="41.0" rx="7" class="repo-icon"/>
+<text x="97" y="423" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="424" text-anchor="start" class="label">hu-qi/deep-domain-learning-skill</text>
 <path d="M 600 360 C 405 360, 405 467, 90 467" class="edge"/>
 
-<rect x="80" y="450" width="214" height="34" rx="17" class="pill"/>
-<circle cx="277" cy="467" r="19.1" fill="#58a6ff" class="node"/>
-<text x="96" y="472" text-anchor="start" class="label">datawhalechina/wow-fullstack</text>
+<rect x="80" y="450" width="234" height="34" rx="17" class="pill"/>
+<rect x="77.9" y="447.9" width="38.2" height="38.2" rx="7" class="repo-icon"/>
+<text x="97" y="471" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="472" text-anchor="start" class="label">datawhalechina/wow-fullstack</text>
 <path d="M 600 360 C 405 360, 405 515, 90 515" class="edge"/>
 
-<rect x="80" y="498" width="186" height="34" rx="17" class="pill"/>
-<circle cx="249" cy="515" r="18.1" fill="#58a6ff" class="node"/>
-<text x="96" y="520" text-anchor="start" class="label">vllm-project/vllm-ascend</text>
+<rect x="80" y="498" width="206" height="34" rx="17" class="pill"/>
+<rect x="78.9" y="496.9" width="36.2" height="36.2" rx="7" class="repo-icon"/>
+<text x="97" y="519" text-anchor="middle" class="icon-text">⌘</text>
+<text x="120" y="520" text-anchor="start" class="label">vllm-project/vllm-ascend</text>
 <text x="1120" y="217" text-anchor="end" class="section">Communities / Orgs</text>
 <path d="M 600 360 C 795 360, 795 252, 1110 252" class="edge"/>
 
-<rect x="1008" y="235" width="112" height="34" rx="17" class="pill"/>
-<circle cx="1025" cy="252" r="20.6" fill="#d2a8ff" class="node"/>
+<clipPath id="avatar-oh-awesome"><circle cx="1103" cy="252" r="20.6"/></clipPath>
+<rect x="994" y="235" width="126" height="34" rx="17" class="pill"/>
+<circle cx="1103" cy="252" r="20.6" class="avatar-fallback"/>
+<image href="https://github.com/oh-awesome.png?size=64" x="1082.4" y="231.4" width="41.2" height="41.2" clip-path="url(#avatar-oh-awesome)" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="1103" cy="252" r="20.6" class="avatar-ring"/>
 <text x="1104" y="257" text-anchor="end" class="label">oh-awesome</text>
 <path d="M 600 360 C 795 360, 795 300, 1110 300" class="edge"/>
 
-<rect x="976" y="283" width="144" height="34" rx="17" class="pill"/>
-<circle cx="993" cy="300" r="19.9" fill="#d2a8ff" class="node"/>
+<clipPath id="avatar-Open-Source-Bazaar"><circle cx="1103" cy="300" r="19.9"/></clipPath>
+<rect x="954" y="283" width="166" height="34" rx="17" class="pill"/>
+<circle cx="1103" cy="300" r="19.9" class="avatar-fallback"/>
+<image href="https://github.com/Open-Source-Bazaar.png?size=64" x="1083.1" y="280.1" width="39.7" height="39.7" clip-path="url(#avatar-Open-Source-Bazaar)" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="1103" cy="300" r="19.9" class="avatar-ring"/>
 <text x="1104" y="305" text-anchor="end" class="label">Open-Source-Bazaar</text>
 <path d="M 600 360 C 795 360, 795 348, 1110 348" class="edge"/>
 
-<rect x="1008" y="331" width="112" height="34" rx="17" class="pill"/>
-<circle cx="1025" cy="348" r="18.4" fill="#d2a8ff" class="node"/>
+<clipPath id="avatar-luojiyin1987"><circle cx="1103" cy="348" r="18.4"/></clipPath>
+<rect x="994" y="331" width="126" height="34" rx="17" class="pill"/>
+<circle cx="1103" cy="348" r="18.4" class="avatar-fallback"/>
+<image href="https://github.com/luojiyin1987.png?size=64" x="1084.6" y="329.6" width="36.7" height="36.7" clip-path="url(#avatar-luojiyin1987)" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="1103" cy="348" r="18.4" class="avatar-ring"/>
 <text x="1104" y="353" text-anchor="end" class="label">luojiyin1987</text>
 <path d="M 600 360 C 795 360, 795 396, 1110 396" class="edge"/>
 
-<rect x="1004" y="379" width="116" height="34" rx="17" class="pill"/>
-<circle cx="1021" cy="396" r="18.1" fill="#d2a8ff" class="node"/>
+<clipPath id="avatar-datawhalechina"><circle cx="1103" cy="396" r="18.1"/></clipPath>
+<rect x="982" y="379" width="138" height="34" rx="17" class="pill"/>
+<circle cx="1103" cy="396" r="18.1" class="avatar-fallback"/>
+<image href="https://github.com/datawhalechina.png?size=64" x="1084.9" y="377.9" width="36.2" height="36.2" clip-path="url(#avatar-datawhalechina)" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="1103" cy="396" r="18.1" class="avatar-ring"/>
 <text x="1104" y="401" text-anchor="end" class="label">datawhalechina</text>
 <path d="M 600 360 C 795 360, 795 444, 1110 444" class="edge"/>
 
-<rect x="1008" y="427" width="112" height="34" rx="17" class="pill"/>
-<circle cx="1025" cy="444" r="17.1" fill="#d2a8ff" class="node"/>
+<clipPath id="avatar-dethan3"><circle cx="1103" cy="444" r="17.1"/></clipPath>
+<rect x="994" y="427" width="126" height="34" rx="17" class="pill"/>
+<circle cx="1103" cy="444" r="17.1" class="avatar-fallback"/>
+<image href="https://github.com/dethan3.png?size=64" x="1085.9" y="426.9" width="34.1" height="34.1" clip-path="url(#avatar-dethan3)" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="1103" cy="444" r="17.1" class="avatar-ring"/>
 <text x="1104" y="449" text-anchor="end" class="label">dethan3</text>
 <path d="M 600 360 C 795 360, 795 492, 1110 492" class="edge"/>
 
-<rect x="1008" y="475" width="112" height="34" rx="17" class="pill"/>
-<circle cx="1025" cy="492" r="16.0" fill="#d2a8ff" class="node"/>
+<clipPath id="avatar-vllm-project"><circle cx="1103" cy="492" r="16.0"/></clipPath>
+<rect x="994" y="475" width="126" height="34" rx="17" class="pill"/>
+<circle cx="1103" cy="492" r="16.0" class="avatar-fallback"/>
+<image href="https://github.com/vllm-project.png?size=64" x="1087.0" y="476.0" width="32.0" height="32.0" clip-path="url(#avatar-vllm-project)" preserveAspectRatio="xMidYMid slice"/>
+<circle cx="1103" cy="492" r="16.0" class="avatar-ring"/>
 <text x="1104" y="497" text-anchor="end" class="label">vllm-project</text>
 <text x="600" y="580" text-anchor="middle" class="section">Languages</text>
 <path d="M 600 360 C 600 455, 246 455, 246 610" class="edge"/>
-<circle cx="246" cy="610" r="17.2" fill="#7ee787" class="node"/>
+<rect x="228.8" y="592.8" width="34.3" height="34.3" rx="9" class="lang-icon"/>
+<text x="246" y="614" text-anchor="middle" class="lang-text">Py</text>
 <text x="246" y="644.2" text-anchor="middle" class="label">Python</text>
 <path d="M 600 360 C 600 455, 364 455, 364 610" class="edge"/>
-<circle cx="364" cy="610" r="16.4" fill="#7ee787" class="node"/>
+<rect x="347.6" y="593.6" width="32.8" height="32.8" rx="9" class="lang-icon"/>
+<text x="364" y="614" text-anchor="middle" class="lang-text">TS</text>
 <text x="364" y="643.4" text-anchor="middle" class="label">TypeScript</text>
 <path d="M 600 360 C 600 455, 482 455, 482 610" class="edge"/>
-<circle cx="482" cy="610" r="16.0" fill="#7ee787" class="node"/>
+<rect x="466.0" y="594.0" width="32.0" height="32.0" rx="9" class="lang-icon"/>
+<text x="482" y="614" text-anchor="middle" class="lang-text">JS</text>
 <text x="482" y="643.0" text-anchor="middle" class="label">JavaScript</text>
 <path d="M 600 360 C 600 455, 600 455, 600 610" class="edge"/>
-<circle cx="600" cy="610" r="13.2" fill="#7ee787" class="node"/>
+<rect x="586.8" y="596.8" width="26.4" height="26.4" rx="9" class="lang-icon"/>
+<text x="600" y="614" text-anchor="middle" class="lang-text">Rs</text>
 <text x="600" y="640.2" text-anchor="middle" class="label">Rust</text>
 <path d="M 600 360 C 600 455, 718 455, 718 610" class="edge"/>
-<circle cx="718" cy="610" r="12.8" fill="#7ee787" class="node"/>
+<rect x="705.2" y="597.2" width="25.5" height="25.5" rx="9" class="lang-icon"/>
+<text x="718" y="614" text-anchor="middle" class="lang-text">Nb</text>
 <text x="718" y="639.8" text-anchor="middle" class="label">Jupyter Noteb…</text>
 <path d="M 600 360 C 600 455, 836 455, 836 610" class="edge"/>
-<circle cx="836" cy="610" r="12.8" fill="#7ee787" class="node"/>
+<rect x="823.2" y="597.2" width="25.5" height="25.5" rx="9" class="lang-icon"/>
+<text x="836" y="614" text-anchor="middle" class="lang-text">H5</text>
 <text x="836" y="639.8" text-anchor="middle" class="label">HTML</text>
 <path d="M 600 360 C 600 455, 954 455, 954 610" class="edge"/>
-<circle cx="954" cy="610" r="12.3" fill="#7ee787" class="node"/>
+<rect x="941.7" y="597.7" width="24.5" height="24.5" rx="9" class="lang-icon"/>
+<text x="954" y="614" text-anchor="middle" class="lang-text">C</text>
 <text x="954" y="639.3" text-anchor="middle" class="label">C</text>
 
 <circle cx="600" cy="360" r="86" class="core"/>
