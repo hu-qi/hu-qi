@@ -1,0 +1,38 @@
+name: Update developer graph
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - readme-next
+    paths:
+      - '.github/scripts/generate-developer-graph.py'
+      - '.github/workflows/update-developer-graph.yml'
+  schedule:
+    - cron: '17 2 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate GitHub developer graph
+        env:
+          GITHUB_USERNAME: hu-qi
+        run: python .github/scripts/generate-developer-graph.py
+
+      - name: Commit updated graph
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update GitHub developer graph
+          file_pattern: assets/github-developer-graph.svg assets/github-developer-graph.json
