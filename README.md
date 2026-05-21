@@ -7,11 +7,11 @@
 
 # Hi, I'm Hu Qi 👋
 
-### AI-native builder · Front-End engineer · Cloud & AIoT explorer
+## AI-native builder · Front-End engineer · Cloud & AIoT explorer
 
 <p>
   <a href="https://github.com/hu-qi"><img alt="GitHub followers" src="https://img.shields.io/github/followers/hu-qi?style=for-the-badge&logo=github&label=Follow"></a>
-  <a href="http://x.com/huqii"><img alt="X @huqii" src="https://img.shields.io/badge/X-@huqii-000000?style=for-the-badge&logo=x"></a>
+  <a href="https://x.com/huqii"><img alt="X @huqii" src="https://img.shields.io/badge/X-@huqii-000000?style=for-the-badge&logo=x"></a>
   <a href="mailto:huqi1024@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-huqi1024%40gmail.com-blue?style=for-the-badge&logo=gmail"></a>
   <a href="https://hu-qi.github.io"><img alt="Blog" src="https://img.shields.io/badge/Blog-hu--qi.github.io-42b883?style=for-the-badge&logo=githubpages"></a>
 </p>
@@ -168,7 +168,7 @@ Workflow      GitHub / VS Code / Technical Writing / Open Source
 </td>
 <td width="45%" align="center">
 
-<img src="https://fastly.jsdelivr.net/gh/hu-qi/hu-qi/wechat-white.png" width="220" alt="WeChat QR Code" />
+<img src="wechat-white.png" width="220" alt="WeChat QR Code" />
 
 </td>
 </tr>
