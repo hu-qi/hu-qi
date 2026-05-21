@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Generate a GitHub developer relationship graph as an SVG.
+"""Generate a static GitHub developer relationship graph for the profile README.
 
-Data sources:
-- GitHub REST API: profile, public repositories, authored issues/PRs, public events
-- Optional environment variables:
-  - GITHUB_TOKEN: token used by GitHub Actions
-  - GITHUB_USERNAME: profile username, default: hu-qi
+The script reads public GitHub profile, repository, issue/PR, and event data,
+then writes two generated assets used by README.md:
 
-The output is intentionally a static SVG so it renders reliably inside GitHub README.
+- assets/github-developer-graph.json
+- assets/github-developer-graph.svg
 """
 
 from __future__ import annotations
@@ -34,6 +32,7 @@ API = "https://api.github.com"
 
 
 def request_json(path: str, *, query: dict[str, Any] | None = None) -> Any:
+    """Fetch JSON from the GitHub REST API or a fully qualified GitHub URL."""
     url = path if path.startswith("https://") else f"{API}{path}"
     if query:
         url += "?" + urllib.parse.urlencode(query)
@@ -52,6 +51,7 @@ def request_json(path: str, *, query: dict[str, Any] | None = None) -> Any:
 
 
 def safe_request(path: str, *, query: dict[str, Any] | None = None, default: Any = None) -> Any:
+    """Fetch GitHub JSON and return a fallback value when the request fails."""
     try:
         return request_json(path, query=query)
     except Exception as exc:  # noqa: BLE001 - README generation should be best-effort
@@ -60,15 +60,18 @@ def safe_request(path: str, *, query: dict[str, Any] | None = None, default: Any
 
 
 def esc(value: Any) -> str:
+    """Escape a value for safe insertion into SVG XML text or attributes."""
     return html.escape(str(value), quote=True)
 
 
 def clamp(text: str, limit: int = 34) -> str:
+    """Trim long labels so they fit inside the SVG graph layout."""
     text = text.strip()
     return text if len(text) <= limit else text[: limit - 1] + "…"
 
 
 def score_repo(repo: dict[str, Any]) -> float:
+    """Score a repository by popularity, freshness, and whether it is original."""
     pushed_at = repo.get("pushed_at") or repo.get("updated_at") or "1970-01-01T00:00:00Z"
     try:
         year = int(pushed_at[:4])
@@ -84,6 +87,7 @@ def score_repo(repo: dict[str, Any]) -> float:
 
 
 def build_dataset() -> dict[str, Any]:
+    """Aggregate profile, repository, collaboration, language, and event data."""
     user = safe_request(f"/users/{USERNAME}", default={})
     repos = safe_request(
         f"/users/{USERNAME}/repos",
@@ -151,10 +155,12 @@ def build_dataset() -> dict[str, Any]:
 
 
 def weight_size(weight: int) -> float:
+    """Convert an aggregate weight into a bounded node radius."""
     return 8 + min(13, math.sqrt(max(weight, 1)) * 1.6)
 
 
 def draw_pill(label: str, weight: int, x: int, y: int, color: str, anchor: str) -> str:
+    """Render a pill-shaped repository or organization node."""
     text = clamp(label)
     width = min(240, max(112, 18 + len(text) * 7))
     height = 34
@@ -170,6 +176,7 @@ def draw_pill(label: str, weight: int, x: int, y: int, color: str, anchor: str) 
 
 
 def draw_group(title: str, items: list[tuple[str, int]], x: int, y: int, color: str, anchor: str, line_x: int) -> str:
+    """Render a vertical group of pill nodes with curved edges from the center."""
     if not items:
         return ""
     parts = [f'<text x="{x}" y="{y - 18}" text-anchor="{anchor}" class="section">{esc(title)}</text>']
@@ -184,11 +191,11 @@ def draw_group(title: str, items: list[tuple[str, int]], x: int, y: int, color: 
 
 
 def draw_bottom(items: list[tuple[str, int]], start_x: int, y: int) -> str:
+    """Render the language row at the bottom of the graph."""
     if not items:
         return ""
     parts = [f'<text x="600" y="{y - 30}" text-anchor="middle" class="section">Languages</text>']
     gap = 118
-    count = len(items)
     for idx, (label, weight) in enumerate(items):
         x = start_x + idx * gap
         r = weight_size(int(weight)) + 2
@@ -199,20 +206,22 @@ def draw_bottom(items: list[tuple[str, int]], start_x: int, y: int) -> str:
 
 
 def draw_top(items: list[tuple[str, int]], start_x: int, y: int) -> str:
+    """Render recent activity nodes above the center without overlapping labels."""
     if not items:
         return ""
-    parts = [f'<text x="600" y="{y - 28}" text-anchor="middle" class="section">Recent Activity</text>']
+    parts = ['<text x="600" y="128" text-anchor="middle" class="section">Recent Activity</text>']
     gap = 130
     for idx, (label, weight) in enumerate(items):
         x = start_x + idx * gap
         r = weight_size(int(weight)) + 2
         parts.append(f'<path d="M 600 360 C 600 260, {x} 260, {x} {y}" class="edge"/>')
         parts.append(f'<circle cx="{x}" cy="{y}" r="{r:.1f}" fill="#ffa657" class="node"/>')
-        parts.append(f'<text x="{x}" y="{y - r - 9:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 16))}</text>')
+        parts.append(f'<text x="{x}" y="{y - r - 10:.1f}" text-anchor="middle" class="label">{esc(clamp(label, 16))}</text>')
     return "\n".join(parts)
 
 
 def render_svg(data: dict[str, Any]) -> str:
+    """Assemble the complete SVG document from the aggregated graph dataset."""
     repos = data.get("repos", [])[:7]
     orgs = data.get("orgs", [])[:6]
     languages = data.get("languages", [])[:7]
@@ -259,7 +268,7 @@ def render_svg(data: dict[str, Any]) -> str:
 <text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · {esc(USERNAME)}</text>
 <text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated {esc(data.get('generated_at', ''))}</text>
 
-{draw_top(events, event_start, 178)}
+{draw_top(events, event_start, 190)}
 {draw_group('Repositories', repos, 80, 210, '#58a6ff', 'start', 405)}
 {draw_group('Communities / Orgs', orgs, 1120, 235, '#d2a8ff', 'end', 795)}
 {draw_bottom(languages, lang_start, 610)}
@@ -275,6 +284,7 @@ def render_svg(data: dict[str, Any]) -> str:
 
 
 def main() -> None:
+    """Generate and write the developer graph JSON and SVG assets."""
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
     data = build_dataset()
     OUT_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
