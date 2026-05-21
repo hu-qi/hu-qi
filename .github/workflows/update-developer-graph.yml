@@ -2,6 +2,12 @@ name: Update developer graph
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - readme-next
+    paths:
+      - '.github/scripts/generate-developer-graph.py'
+      - '.github/workflows/update-developer-graph.yml'
   schedule:
     - cron: '17 2 * * 1'
 
