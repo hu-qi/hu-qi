@@ -33,24 +33,24 @@
 <rect width="1200" height="760" rx="28" class="bg"/>
 <rect x="32" y="32" width="1136" height="696" rx="26" class="card"/>
 <text x="600" y="82" text-anchor="middle" class="title">GitHub Developer Graph · hu-qi</text>
-<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 09:09:13 UTC</text>
+<text x="600" y="112" text-anchor="middle" class="sub">Data from GitHub REST API · repos · PRs / issues · public events · generated 2026-05-21 09:13:16 UTC</text>
 
-<text x="600" y="128" text-anchor="middle" class="section">Recent Activity</text>
-<path d="M 600 360 C 600 260, 340 260, 340 190" class="edge"/>
-<circle cx="340" cy="190" r="23.0" fill="#ffa657" class="node"/>
-<text x="340" y="157.0" text-anchor="middle" class="label">Push</text>
-<path d="M 600 360 C 600 260, 470 260, 470 190" class="edge"/>
-<circle cx="470" cy="190" r="14.8" fill="#ffa657" class="node"/>
-<text x="470" y="165.2" text-anchor="middle" class="label">Watch</text>
-<path d="M 600 360 C 600 260, 600 260, 600 190" class="edge"/>
-<circle cx="600" cy="190" r="13.6" fill="#ffa657" class="node"/>
-<text x="600" y="166.4" text-anchor="middle" class="label">Create</text>
-<path d="M 600 360 C 600 260, 730 260, 730 190" class="edge"/>
-<circle cx="730" cy="190" r="12.3" fill="#ffa657" class="node"/>
-<text x="730" y="167.7" text-anchor="middle" class="label">PullRequest</text>
-<path d="M 600 360 C 600 260, 860 260, 860 190" class="edge"/>
-<circle cx="860" cy="190" r="11.6" fill="#ffa657" class="node"/>
-<text x="860" y="168.4" text-anchor="middle" class="label">Fork</text>
+<text x="600" y="205" text-anchor="middle" class="section">Recent Activity</text>
+<path d="M 600 360 C 600 310, 340 300, 340 245" class="edge"/>
+<circle cx="340" cy="245" r="23.0" fill="#ffa657" class="node"/>
+<text x="340" y="212.0" text-anchor="middle" class="label">Push</text>
+<path d="M 600 360 C 600 310, 470 300, 470 245" class="edge"/>
+<circle cx="470" cy="245" r="14.8" fill="#ffa657" class="node"/>
+<text x="470" y="220.2" text-anchor="middle" class="label">Watch</text>
+<path d="M 600 360 C 600 310, 600 300, 600 245" class="edge"/>
+<circle cx="600" cy="245" r="13.6" fill="#ffa657" class="node"/>
+<text x="600" y="221.4" text-anchor="middle" class="label">Create</text>
+<path d="M 600 360 C 600 310, 730 300, 730 245" class="edge"/>
+<circle cx="730" cy="245" r="12.3" fill="#ffa657" class="node"/>
+<text x="730" y="222.7" text-anchor="middle" class="label">PullRequest</text>
+<path d="M 600 360 C 600 310, 860 300, 860 245" class="edge"/>
+<circle cx="860" cy="245" r="11.6" fill="#ffa657" class="node"/>
+<text x="860" y="223.4" text-anchor="middle" class="label">Fork</text>
 <text x="80" y="192" text-anchor="start" class="section">Repositories</text>
 <path d="M 600 360 C 405 360, 405 227, 90 227" class="edge"/>
 
