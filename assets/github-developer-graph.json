@@ -1,28 +1,24 @@
 {
-  "generated_at": "2026-05-21 10:16:50 UTC",
+  "generated_at": "2026-05-25 06:48:46 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 122,
-    "followers": 124,
-    "following": 673
+    "public_repos": 127,
+    "followers": 123,
+    "following": 675
   },
   "repos": [
     [
-      "hu-qi/x-cli-rs",
-      105
+      "hu-qi/globaldev-agent",
+      145
     ],
     [
-      "oh-awesome/flutter_packages",
-      93
-    ],
-    [
-      "hu-qi/hu-qi",
-      85
+      "hu-qi/mural-flashlight",
+      130
     ],
     [
       "Open-Source-Bazaar/feishu-action",
-      80
+      64
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -35,32 +31,36 @@
     [
       "vllm-project/vllm-ascend",
       40
+    ],
+    [
+      "luojiyin1987/office-compress",
+      32
     ]
   ],
   "orgs": [
     [
-      "oh-awesome",
-      62
-    ],
-    [
       "Open-Source-Bazaar",
-      55
-    ],
-    [
-      "luojiyin1987",
-      42
+      45
     ],
     [
       "datawhalechina",
       40
     ],
     [
+      "luojiyin1987",
+      40
+    ],
+    [
       "dethan3",
-      32
+      30
     ],
     [
       "vllm-project",
       25
+    ],
+    [
+      "FenjuFu",
+      20
     ]
   ],
   "languages": [
@@ -70,11 +70,11 @@
     ],
     [
       "TypeScript",
-      16
+      20
     ],
     [
       "JavaScript",
-      14
+      12
     ],
     [
       "Rust",
@@ -96,23 +96,23 @@
   "events": [
     [
       "Push",
-      83
+      70
     ],
     [
-      "Watch",
-      9
-    ],
-    [
-      "Create",
-      5
+      "Issues",
+      21
     ],
     [
       "PullRequest",
-      2
+      4
     ],
     [
-      "Fork",
-      1
+      "Create",
+      3
+    ],
+    [
+      "Watch",
+      2
     ]
   ]
 }
