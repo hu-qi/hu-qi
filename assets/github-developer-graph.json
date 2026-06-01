@@ -1,46 +1,50 @@
 {
-  "generated_at": "2026-05-25 06:48:46 UTC",
+  "generated_at": "2026-06-01 07:24:38 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 127,
-    "followers": 123,
-    "following": 675
+    "public_repos": 133,
+    "followers": 124,
+    "following": 677
   },
   "repos": [
     [
-      "hu-qi/globaldev-agent",
-      145
+      "oh-awesome/flutter_packages",
+      138
+    ],
+    [
+      "harnessclaw/harnessclaw",
+      69
     ],
     [
       "hu-qi/mural-flashlight",
-      130
-    ],
-    [
-      "Open-Source-Bazaar/feishu-action",
       64
     ],
     [
       "hu-qi/deep-domain-learning-skill",
-      61
+      59
     ],
     [
       "datawhalechina/wow-fullstack",
       48
     ],
     [
-      "vllm-project/vllm-ascend",
-      40
+      "Open-Source-Bazaar/feishu-action",
+      48
     ],
     [
-      "luojiyin1987/office-compress",
-      32
+      "vllm-project/vllm-ascend",
+      40
     ]
   ],
   "orgs": [
     [
-      "Open-Source-Bazaar",
-      45
+      "oh-awesome",
+      92
+    ],
+    [
+      "harnessclaw",
+      44
     ],
     [
       "datawhalechina",
@@ -51,30 +55,30 @@
       40
     ],
     [
+      "Open-Source-Bazaar",
+      35
+    ],
+    [
       "dethan3",
-      30
-    ],
-    [
-      "vllm-project",
-      25
-    ],
-    [
-      "FenjuFu",
-      20
+      32
     ]
   ],
   "languages": [
-    [
-      "Python",
-      20
-    ],
     [
       "TypeScript",
       20
     ],
     [
+      "Python",
+      18
+    ],
+    [
       "JavaScript",
-      12
+      11
+    ],
+    [
+      "HTML",
+      4
     ],
     [
       "Rust",
@@ -85,10 +89,6 @@
       3
     ],
     [
-      "HTML",
-      3
-    ],
-    [
       "C",
       2
     ]
@@ -96,22 +96,22 @@
   "events": [
     [
       "Push",
-      70
+      51
     ],
     [
       "Issues",
-      21
-    ],
-    [
-      "PullRequest",
-      4
-    ],
-    [
-      "Create",
-      3
+      28
     ],
     [
       "Watch",
+      10
+    ],
+    [
+      "Create",
+      7
+    ],
+    [
+      "Fork",
       2
     ]
   ]
