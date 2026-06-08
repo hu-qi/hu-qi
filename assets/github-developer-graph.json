@@ -1,20 +1,24 @@
 {
-  "generated_at": "2026-06-01 07:24:38 UTC",
+  "generated_at": "2026-06-08 07:08:26 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 133,
-    "followers": 124,
-    "following": 677
+    "public_repos": 135,
+    "followers": 127,
+    "following": 679
   },
   "repos": [
     [
-      "oh-awesome/flutter_packages",
-      138
+      "hu-qi/ai-app-dev-handbook",
+      70
     ],
     [
       "harnessclaw/harnessclaw",
-      69
+      66
+    ],
+    [
+      "oh-awesome/flutter_packages",
+      66
     ],
     [
       "hu-qi/mural-flashlight",
@@ -31,24 +35,20 @@
     [
       "Open-Source-Bazaar/feishu-action",
       48
-    ],
-    [
-      "vllm-project/vllm-ascend",
-      40
     ]
   ],
   "orgs": [
     [
-      "oh-awesome",
-      92
+      "datawhalechina",
+      58
     ],
     [
-      "harnessclaw",
+      "oh-awesome",
       44
     ],
     [
-      "datawhalechina",
-      40
+      "harnessclaw",
+      42
     ],
     [
       "luojiyin1987",
@@ -66,11 +66,11 @@
   "languages": [
     [
       "TypeScript",
-      20
+      21
     ],
     [
       "Python",
-      18
+      17
     ],
     [
       "JavaScript",
@@ -96,23 +96,23 @@
   "events": [
     [
       "Push",
-      51
+      43
     ],
     [
       "Issues",
-      28
+      26
     ],
     [
       "Watch",
-      10
+      20
     ],
     [
-      "Create",
-      7
+      "IssueComment",
+      4
     ],
     [
-      "Fork",
-      2
+      "PullRequest",
+      3
     ]
   ]
 }
