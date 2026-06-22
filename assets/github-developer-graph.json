@@ -1,19 +1,23 @@
 {
-  "generated_at": "2026-06-15 07:41:07 UTC",
+  "generated_at": "2026-06-22 07:43:21 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 141,
+    "public_repos": 146,
     "followers": 127,
-    "following": 684
+    "following": 685
   },
   "repos": [
     [
-      "hu-qi/QWebBridge",
-      141
+      "oh-awesome/flutter_packages",
+      78
     ],
     [
-      "oh-awesome/flutter_packages",
+      "hu-qi/picgo-plugin-obs",
+      70
+    ],
+    [
+      "hu-qi/jiuwenswarm",
       66
     ],
     [
@@ -29,52 +33,48 @@
       48
     ],
     [
-      "Open-Source-Bazaar/feishu-action",
-      48
-    ],
-    [
-      "vllm-project/vllm-ascend",
-      40
+      "DengShiyingA/harmonyos-ai-skill",
+      47
     ]
   ],
   "orgs": [
     [
-      "datawhalechina",
-      47
+      "oh-awesome",
+      52
     ],
     [
-      "oh-awesome",
-      44
+      "datawhalechina",
+      45
     ],
     [
       "luojiyin1987",
-      40
+      42
     ],
     [
-      "Open-Source-Bazaar",
-      39
-    ],
-    [
-      "harnessclaw",
+      "DengShiyingA",
       30
     ],
     [
-      "dethan3",
+      "Open-Source-Bazaar",
+      30
+    ],
+    [
+      "harnessclaw",
       30
     ]
   ],
   "languages": [
     [
       "TypeScript",
-      23
+      20
     ],
     [
       "Python",
-      17
+      19
     ],
     [
       "JavaScript",
-      12
+      10
     ],
     [
       "HTML",
@@ -85,33 +85,33 @@
       4
     ],
     [
-      "Swift",
+      "Shell",
       3
     ],
     [
-      "Jupyter Notebook",
+      "Swift",
       3
     ]
   ],
   "events": [
     [
       "Push",
-      45
+      57
     ],
     [
-      "Issues",
-      16
+      "Create",
+      14
+    ],
+    [
+      "Delete",
+      8
     ],
     [
       "Watch",
-      13
+      7
     ],
     [
       "PullRequest",
-      10
-    ],
-    [
-      "IssueComment",
       6
     ]
   ]
