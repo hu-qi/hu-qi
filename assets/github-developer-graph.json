@@ -1,24 +1,16 @@
 {
-  "generated_at": "2026-06-29 07:07:32 UTC",
+  "generated_at": "2026-07-06 06:48:09 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 150,
-    "followers": 128,
-    "following": 685
+    "public_repos": 152,
+    "followers": 129,
+    "following": 686
   },
   "repos": [
     [
       "oh-awesome/flutter_packages",
-      84
-    ],
-    [
-      "hu-qi/xiaozhi-esp32-server",
-      69
-    ],
-    [
-      "hu-qi/macos-dev-machine-rebuild-skill",
-      61
+      195
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -35,12 +27,20 @@
     [
       "DengShiyingA/harmonyos-ai-skill",
       32
+    ],
+    [
+      "luojiyin1987/office-compress",
+      32
+    ],
+    [
+      "hu-qi/tb-hard-studio",
+      28
     ]
   ],
   "orgs": [
     [
       "oh-awesome",
-      56
+      130
     ],
     [
       "datawhalechina",
@@ -51,16 +51,16 @@
       40
     ],
     [
-      "kaiyuanshe",
-      35
-    ],
-    [
       "dethan3",
       32
     ],
     [
       "harnessclaw",
       30
+    ],
+    [
+      "kaiyuanshe",
+      21
     ]
   ],
   "languages": [
@@ -77,6 +77,10 @@
       10
     ],
     [
+      "HTML",
+      4
+    ],
+    [
       "Rust",
       4
     ],
@@ -87,32 +91,28 @@
     [
       "Swift",
       3
-    ],
-    [
-      "HTML",
-      3
     ]
   ],
   "events": [
     [
       "Push",
-      67
-    ],
-    [
-      "PullRequest",
-      11
+      64
     ],
     [
       "Create",
-      9
-    ],
-    [
-      "Delete",
-      5
+      10
     ],
     [
       "Watch",
-      3
+      9
+    ],
+    [
+      "PullRequest",
+      6
+    ],
+    [
+      "Delete",
+      4
     ]
   ]
 }
