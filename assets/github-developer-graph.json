@@ -1,72 +1,72 @@
 {
-  "generated_at": "2026-07-06 06:48:09 UTC",
+  "generated_at": "2026-07-13 05:49:22 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 152,
+    "public_repos": 157,
     "followers": 129,
-    "following": 686
+    "following": 688
   },
   "repos": [
     [
       "oh-awesome/flutter_packages",
-      195
+      111
+    ],
+    [
+      "hu-qi/tender-screenshot-agent",
+      79
+    ],
+    [
+      "hu-qi/gzh-design-skill",
+      60
     ],
     [
       "hu-qi/deep-domain-learning-skill",
       59
     ],
     [
-      "datawhalechina/wow-fullstack",
-      48
-    ],
-    [
       "harnessclaw/harnessclaw",
       48
     ],
     [
+      "stablyai/orca",
+      46
+    ],
+    [
       "DengShiyingA/harmonyos-ai-skill",
       32
-    ],
-    [
-      "luojiyin1987/office-compress",
-      32
-    ],
-    [
-      "hu-qi/tb-hard-studio",
-      28
     ]
   ],
   "orgs": [
     [
       "oh-awesome",
-      130
-    ],
-    [
-      "datawhalechina",
-      45
+      74
     ],
     [
       "luojiyin1987",
       40
     ],
     [
-      "dethan3",
-      32
+      "datawhalechina",
+      30
     ],
     [
       "harnessclaw",
       30
     ],
     [
-      "kaiyuanshe",
-      21
+      "dethan3",
+      30
+    ],
+    [
+      "stablyai",
+      29
     ]
   ],
   "languages": [
     [
       "TypeScript",
-      21
+      22
     ],
     [
       "Python",
@@ -77,12 +77,12 @@
       10
     ],
     [
-      "HTML",
-      4
+      "Rust",
+      5
     ],
     [
-      "Rust",
-      4
+      "HTML",
+      3
     ],
     [
       "Shell",
@@ -96,22 +96,22 @@
   "events": [
     [
       "Push",
-      64
+      75
     ],
     [
       "Create",
-      10
-    ],
-    [
-      "Watch",
-      9
+      7
     ],
     [
       "PullRequest",
-      6
+      5
     ],
     [
-      "Delete",
+      "Fork",
+      4
+    ],
+    [
+      "Issues",
       4
     ]
   ]
