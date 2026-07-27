@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-20 05:50:17 UTC",
+  "generated_at": "2026-07-27 06:02:02 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 161,
-    "followers": 129,
+    "public_repos": 162,
+    "followers": 130,
     "following": 689
   },
   "repos": [
     [
       "hu-qi/postcard4cj",
-      118
+      280
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -21,20 +21,20 @@
       48
     ],
     [
-      "hu-qi/huawei-case-writer",
-      43
-    ],
-    [
       "stablyai/orca",
       40
     ],
     [
-      "hu-qi/bid-screenshot-assistant",
-      37
+      "DengShiyingA/harmonyos-ai-skill",
+      32
     ],
     [
-      "hu-qi/frontend-project-map-skill",
-      34
+      "luojiyin1987/office-compress",
+      32
+    ],
+    [
+      "luojiyin1987/web-printer",
+      24
     ]
   ],
   "orgs": [
@@ -74,14 +74,14 @@
     ],
     [
       "JavaScript",
-      10
-    ],
-    [
-      "Rust",
-      6
+      11
     ],
     [
       "HTML",
+      5
+    ],
+    [
+      "Rust",
       5
     ],
     [
@@ -96,22 +96,22 @@
   "events": [
     [
       "Push",
-      74
-    ],
-    [
-      "PullRequest",
-      12
+      88
     ],
     [
       "Watch",
-      5
+      3
+    ],
+    [
+      "PullRequest",
+      3
     ],
     [
       "Create",
-      4
+      3
     ],
     [
-      "Issues",
+      "IssueComment",
       3
     ]
   ]
