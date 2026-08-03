@@ -1,16 +1,20 @@
 {
-  "generated_at": "2026-07-27 06:02:02 UTC",
+  "generated_at": "2026-08-03 05:53:19 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 162,
+    "public_repos": 165,
     "followers": 130,
-    "following": 689
+    "following": 690
   },
   "repos": [
     [
-      "hu-qi/postcard4cj",
-      280
+      "hu-qi/QWebBridge",
+      140
+    ],
+    [
+      "oh-awesome/flutter_packages",
+      117
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -25,22 +29,22 @@
       40
     ],
     [
+      "hu-qi/postcard4cj",
+      34
+    ],
+    [
       "DengShiyingA/harmonyos-ai-skill",
       32
-    ],
-    [
-      "luojiyin1987/office-compress",
-      32
-    ],
-    [
-      "luojiyin1987/web-printer",
-      24
     ]
   ],
   "orgs": [
     [
+      "oh-awesome",
+      78
+    ],
+    [
       "luojiyin1987",
-      40
+      42
     ],
     [
       "harnessclaw",
@@ -55,10 +59,6 @@
       25
     ],
     [
-      "DengShiyingA",
-      20
-    ],
-    [
       "datawhalechina",
       20
     ]
@@ -66,7 +66,7 @@
   "languages": [
     [
       "TypeScript",
-      22
+      24
     ],
     [
       "Python",
@@ -74,7 +74,7 @@
     ],
     [
       "JavaScript",
-      11
+      10
     ],
     [
       "HTML",
@@ -96,23 +96,23 @@
   "events": [
     [
       "Push",
-      88
-    ],
-    [
-      "Watch",
-      3
-    ],
-    [
-      "PullRequest",
-      3
-    ],
-    [
-      "Create",
-      3
+      63
     ],
     [
       "IssueComment",
-      3
+      10
+    ],
+    [
+      "Issues",
+      6
+    ],
+    [
+      "Delete",
+      6
+    ],
+    [
+      "PullRequest",
+      5
     ]
   ]
 }
