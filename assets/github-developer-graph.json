@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-08-10 04:08:45 UTC",
+  "generated_at": "2026-08-17 03:14:23 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 163,
-    "followers": 130,
-    "following": 690
+    "public_repos": 165,
+    "followers": 131,
+    "following": 692
   },
   "repos": [
     [
       "oh-awesome/flutter_packages",
-      135
-    ],
-    [
-      "hu-qi/QWebBridge",
-      98
+      162
     ],
     [
       "hu-qi/deep-domain-learning-skill",
       59
+    ],
+    [
+      "hu-qi/QWebBridge",
+      50
     ],
     [
       "harnessclaw/harnessclaw",
@@ -40,7 +40,7 @@
   "orgs": [
     [
       "oh-awesome",
-      90
+      108
     ],
     [
       "luojiyin1987",
@@ -66,7 +66,7 @@
   "languages": [
     [
       "TypeScript",
-      24
+      23
     ],
     [
       "Python",
@@ -96,11 +96,15 @@
   "events": [
     [
       "Push",
-      65
+      63
     ],
     [
       "Watch",
-      7
+      9
+    ],
+    [
+      "Create",
+      6
     ],
     [
       "Issues",
@@ -108,11 +112,7 @@
     ],
     [
       "Delete",
-      5
-    ],
-    [
-      "Create",
-      3
+      4
     ]
   ]
 }
