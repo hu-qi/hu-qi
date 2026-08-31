@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-24 03:18:10 UTC",
+  "generated_at": "2026-08-31 08:41:42 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 164,
+    "public_repos": 166,
     "followers": 131,
-    "following": 692
+    "following": 694
   },
   "repos": [
     [
-      "oh-awesome/flutter_packages",
-      198
+      "hu-qi/wtagent-rs",
+      286
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -33,15 +33,11 @@
       32
     ],
     [
-      "hu-qi/postcard4cj",
-      28
+      "luojiyin1987/web-printer",
+      24
     ]
   ],
   "orgs": [
-    [
-      "oh-awesome",
-      132
-    ],
     [
       "luojiyin1987",
       40
@@ -61,6 +57,10 @@
     [
       "datawhalechina",
       20
+    ],
+    [
+      "DengShiyingA",
+      20
     ]
   ],
   "languages": [
@@ -70,18 +70,18 @@
     ],
     [
       "Python",
-      19
+      18
     ],
     [
       "JavaScript",
       10
     ],
     [
-      "HTML",
-      5
+      "Rust",
+      7
     ],
     [
-      "Rust",
+      "HTML",
       5
     ],
     [
@@ -96,23 +96,23 @@
   "events": [
     [
       "Push",
-      68
+      59
     ],
     [
-      "Watch",
-      12
+      "PullRequest",
+      25
     ],
     [
       "Create",
-      6
+      13
     ],
     [
-      "Issues",
-      5
-    ],
-    [
-      "Fork",
+      "Watch",
       2
+    ],
+    [
+      "Public",
+      1
     ]
   ]
 }
