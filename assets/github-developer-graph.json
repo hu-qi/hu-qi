@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21 08:00:22 UTC",
+  "generated_at": "2026-09-28 08:44:51 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
@@ -9,38 +9,38 @@
   },
   "repos": [
     [
-      "hu-qi/devspace-devbridge-rs",
-      153
-    ],
-    [
-      "huaweicloud/devspace-devbridge",
-      84
+      "hu-qi/moma-devops-agent",
+      301
     ],
     [
       "hu-qi/deep-domain-learning-skill",
       59
     ],
     [
+      "huaweicloud/devspace-devbridge",
+      48
+    ],
+    [
       "harnessclaw/harnessclaw",
       48
     ],
     [
-      "hu-qi/ioe-ai-ros2",
-      46
-    ],
-    [
-      "hu-qi/jiuwen_core_rs",
-      46
-    ],
-    [
       "stablyai/orca",
-      43
+      40
+    ],
+    [
+      "DengShiyingA/harmonyos-ai-skill",
+      32
+    ],
+    [
+      "luojiyin1987/office-compress",
+      32
     ]
   ],
   "orgs": [
     [
       "huaweicloud",
-      64
+      40
     ],
     [
       "luojiyin1987",
@@ -52,7 +52,7 @@
     ],
     [
       "stablyai",
-      27
+      25
     ],
     [
       "datawhalechina",
@@ -96,23 +96,23 @@
   "events": [
     [
       "Push",
-      69
+      91
     ],
     [
-      "Create",
-      9
+      "PullRequest",
+      4
     ],
     [
       "Issues",
-      6
+      3
     ],
     [
-      "IssueComment",
-      5
+      "Create",
+      1
     ],
     [
       "Watch",
-      5
+      1
     ]
   ]
 }
