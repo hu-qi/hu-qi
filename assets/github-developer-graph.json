@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-28 08:44:51 UTC",
+  "generated_at": "2026-10-05 09:10:28 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
     "public_repos": 171,
     "followers": 134,
-    "following": 696
+    "following": 697
   },
   "repos": [
     [
       "hu-qi/moma-devops-agent",
-      301
+      292
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -96,22 +96,22 @@
   "events": [
     [
       "Push",
-      91
+      89
     ],
     [
       "PullRequest",
-      4
+      5
     ],
     [
       "Issues",
       3
     ],
     [
-      "Create",
-      1
+      "Watch",
+      2
     ],
     [
-      "Watch",
+      "Create",
       1
     ]
   ]
