@@ -1,16 +1,20 @@
 {
-  "generated_at": "2026-10-05 09:10:28 UTC",
+  "generated_at": "2026-10-12 09:19:50 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 171,
+    "public_repos": 174,
     "followers": 134,
     "following": 697
   },
   "repos": [
     [
-      "hu-qi/moma-devops-agent",
-      292
+      "hu-qi/xiaohong-app-hub",
+      169
+    ],
+    [
+      "hu-qi/modelbox-rs",
+      133
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -30,10 +34,6 @@
     ],
     [
       "DengShiyingA/harmonyos-ai-skill",
-      32
-    ],
-    [
-      "luojiyin1987/office-compress",
       32
     ]
   ],
@@ -66,7 +66,7 @@
   "languages": [
     [
       "TypeScript",
-      23
+      24
     ],
     [
       "Python",
@@ -78,7 +78,7 @@
     ],
     [
       "Rust",
-      8
+      9
     ],
     [
       "HTML",
@@ -96,22 +96,22 @@
   "events": [
     [
       "Push",
-      89
+      87
     ],
     [
-      "PullRequest",
-      5
-    ],
-    [
-      "Issues",
-      3
-    ],
-    [
-      "Watch",
-      2
+      "Delete",
+      6
     ],
     [
       "Create",
+      5
+    ],
+    [
+      "Watch",
+      1
+    ],
+    [
+      "PullRequest",
       1
     ]
   ]
