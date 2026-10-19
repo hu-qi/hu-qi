@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-12 09:19:50 UTC",
+  "generated_at": "2026-10-19 07:52:14 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 174,
+    "public_repos": 179,
     "followers": 134,
-    "following": 697
+    "following": 700
   },
   "repos": [
     [
-      "hu-qi/xiaohong-app-hub",
-      169
+      "hu-qi/rednote-skills",
+      187
     ],
     [
-      "hu-qi/modelbox-rs",
-      133
+      "hu-qi/how-to-mcd",
+      100
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -29,12 +29,12 @@
       48
     ],
     [
-      "stablyai/orca",
-      40
+      "hu-qi/lark-docs-bot-rs",
+      43
     ],
     [
-      "DengShiyingA/harmonyos-ai-skill",
-      32
+      "stablyai/orca",
+      40
     ]
   ],
   "orgs": [
@@ -66,7 +66,7 @@
   "languages": [
     [
       "TypeScript",
-      24
+      23
     ],
     [
       "Python",
@@ -74,11 +74,11 @@
     ],
     [
       "JavaScript",
-      10
+      12
     ],
     [
       "Rust",
-      9
+      10
     ],
     [
       "HTML",
@@ -96,22 +96,18 @@
   "events": [
     [
       "Push",
-      87
+      48
     ],
     [
-      "Delete",
-      6
+      "PullRequest",
+      46
     ],
     [
       "Create",
       5
     ],
     [
-      "Watch",
-      1
-    ],
-    [
-      "PullRequest",
+      "Issues",
       1
     ]
   ]
