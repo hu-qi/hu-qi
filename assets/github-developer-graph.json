@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-10-19 07:52:14 UTC",
+  "generated_at": "2026-10-26 07:51:57 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
-    "public_repos": 179,
+    "public_repos": 181,
     "followers": 134,
-    "following": 700
+    "following": 703
   },
   "repos": [
     [
       "hu-qi/rednote-skills",
-      187
+      178
     ],
     [
-      "hu-qi/how-to-mcd",
-      100
+      "datawhalechina/mini-workbuddy",
+      67
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -30,7 +30,7 @@
     ],
     [
       "hu-qi/lark-docs-bot-rs",
-      43
+      40
     ],
     [
       "stablyai/orca",
@@ -39,12 +39,12 @@
   ],
   "orgs": [
     [
-      "huaweicloud",
-      40
+      "datawhalechina",
+      63
     ],
     [
-      "luojiyin1987",
-      35
+      "huaweicloud",
+      49
     ],
     [
       "harnessclaw",
@@ -55,8 +55,8 @@
       25
     ],
     [
-      "datawhalechina",
-      20
+      "luojiyin1987",
+      25
     ],
     [
       "DengShiyingA",
@@ -96,19 +96,23 @@
   "events": [
     [
       "Push",
-      48
-    ],
-    [
-      "PullRequest",
-      46
+      57
     ],
     [
       "Create",
-      5
+      15
+    ],
+    [
+      "PullRequest",
+      12
+    ],
+    [
+      "Watch",
+      10
     ],
     [
       "Issues",
-      1
+      4
     ]
   ]
 }
