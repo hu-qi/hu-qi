@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-09 09:53:22 UTC",
+  "generated_at": "2026-11-16 09:51:16 UTC",
   "user": {
     "login": "hu-qi",
     "name": "huqi",
     "public_repos": 186,
     "followers": 134,
-    "following": 704
+    "following": 706
   },
   "repos": [
     [
       "hu-qi/arkcompat",
-      289
+      280
     ],
     [
       "hu-qi/deep-domain-learning-skill",
@@ -21,16 +21,16 @@
       56
     ],
     [
+      "stablyai/orca",
+      51
+    ],
+    [
       "huaweicloud/devspace-devbridge",
       48
     ],
     [
       "harnessclaw/harnessclaw",
       48
-    ],
-    [
-      "stablyai/orca",
-      40
     ],
     [
       "DengShiyingA/harmonyos-ai-skill",
@@ -47,12 +47,12 @@
       45
     ],
     [
-      "harnessclaw",
-      30
+      "stablyai",
+      32
     ],
     [
-      "stablyai",
-      25
+      "harnessclaw",
+      30
     ],
     [
       "DengShiyingA",
@@ -70,22 +70,22 @@
     ],
     [
       "Python",
-      21
+      22
     ],
     [
       "JavaScript",
-      12
+      11
     ],
     [
       "Rust",
       10
     ],
     [
-      "HTML",
-      4
+      "Shell",
+      3
     ],
     [
-      "Shell",
+      "HTML",
       3
     ],
     [
@@ -95,24 +95,24 @@
   ],
   "events": [
     [
-      "PullRequest",
-      43
-    ],
-    [
       "Push",
-      34
+      46
     ],
     [
       "Create",
-      19
+      32
     ],
     [
-      "Watch",
-      2
+      "Delete",
+      18
+    ],
+    [
+      "IssueComment",
+      3
     ],
     [
       "Issues",
-      2
+      1
     ]
   ]
 }
